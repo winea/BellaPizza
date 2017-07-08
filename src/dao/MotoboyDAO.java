@@ -15,7 +15,7 @@ import java.sql.PreparedStatement;
 public class MotoboyDAO {
     private Connection connection;
     String nome;
-    
+    //TESTE
     public MotoboyDAO(){ 
         this.connection = new ConnectionFactory().getConnection();
     } 
