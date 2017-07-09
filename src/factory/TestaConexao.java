@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package factory;
-import gui.MotoboyGUI;
 import java.sql.Connection; 
 import java.sql.SQLException; 
 /**

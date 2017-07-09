@@ -9,14 +9,22 @@ package gui;
  *
  * @author escol
  */
-public class TelaCliente extends javax.swing.JFrame {
+import dao.ClienteDAO;
+import java.sql.*;
+import javax.swing.JOptionPane;
+import modelo.Cliente;
 
+public class TelaCliente extends javax.swing.JFrame {
+        
+   
     /**
      * Creates new form TelaCliente
      */
     public TelaCliente() {
         initComponents();
+       
     }
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -90,6 +98,11 @@ public class TelaCliente extends javax.swing.JFrame {
         btnremover.setText("Remover");
 
         btnpesquisar.setText("Pesquisar");
+        btnpesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpesquisarActionPerformed(evt);
+            }
+        });
 
         btneditar.setText("Editar");
 
@@ -215,6 +228,19 @@ public class TelaCliente extends javax.swing.JFrame {
         jtfnumero.setText("");
         jtfcomplemento.setText("");
     }//GEN-LAST:event_btnlimparActionPerformed
+
+    private void btnpesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpesquisarActionPerformed
+        // TODO add your handling code here:
+        Cliente cliente = new Cliente();
+        cliente.setCodigo(jtfcodigo.getText());
+        cliente.setNome(jtfnome.getText());
+        cliente.setTelefone(jtftelefone.getText());
+        cliente.setRua(jtfendereco.getText());
+        cliente.setNumero(jtfnumero.getText());
+        cliente.setBairro(jtfbairro.getText());
+        cliente.setComplemento(jtfcomplemento.getText());
+  
+    }//GEN-LAST:event_btnpesquisarActionPerformed
 
     /**
      * @param args the command line arguments

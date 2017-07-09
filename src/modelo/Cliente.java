@@ -11,56 +11,56 @@ package modelo;
  */
 public class Cliente {
     
-    int id;
-    String nome;
-    int telefone;
-    String rua;
-    String bairro;
-    int numero;
-    String complemento;
+    private String codigo;
+    private String nome;
+    private String telefone;
+    private String rua;
+    private String bairro;
+    private String numero;
+    private String complemento;
 
-    public int getid(){
-        return id;
+    public String getCodigo(){
+        return codigo;
     }
-    public void setid(int id){
-        this.id = id;
+    public void setCodigo(String codigo){
+        this.codigo = codigo;
     }
 
-    public String getnome(){
+    public String getNome(){
         return nome;
     }
-    public void setnome(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
 
-    public int gettelefone(){
+    public String getTelefone(){
         return telefone;
     }
-    public void settelefone(int telefone){
+    public void setTelefone(String telefone){
         this.telefone = telefone;
     }
-    public String getrua(){
+    public String getRua(){
         return rua;
     }
-    public void setrua(String rua){
+    public void setRua(String rua){
         this.rua = rua;
     }
-    public int getnumero(){
+    public String getNumero(){
         return numero;
     }
-    public void setnumero(int numero){
+    public void setNumero(String numero){
         this.numero = numero;
     }
-    public String getbairro(){
+    public String getBairro(){
         return bairro;
     }
-    public void setbairro(String bairro){
+    public void setBairro(String bairro){
         this.bairro = bairro;
     }
-    public String getcomplemento(){
+    public String getComplemento(){
         return complemento;
     }
-    public void setcomplemento(String complemento){
+    public void setComplemento(String complemento){
         this.complemento = complemento;
     }
 }

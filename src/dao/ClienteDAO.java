@@ -9,40 +9,52 @@ import modelo.Cliente;
 import java.sql.*;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
+import gui.TelaCliente;
 
-/**
- *
- * @author escol
- */
 public class ClienteDAO {
     private Connection connection;
-    
-    PreparedStatement pst = null;
     ResultSet rs = null;
-    private Object jtfcodigo;
+    String nome;
     
-    public ClienteDAO(){
-        this.connection = new ConnectionFactory().getConnection();     
-    }
-    
-    public void Pesquisa(Cliente cliente){
+    public ClienteDAO(){ 
+        this.connection = new ConnectionFactory().getConnection();
+    } 
+    public void pesquisa(Cliente cliente){ 
         
-        String sql = "select * from cliente where Codigo_Cliente=?";
+        String sql = "select from * where Codigo_Cliente=?";
         try{
-            pst = connection.prepareStatement(sql);  
-            pst.setString(1,jtfcodigo.getText());
-            rs = pst.executeQuery();
-            
-            if(rs.next()){
-                
-            }
-            else{
-                
-            }
-        }catch(Exception e){
+           PreparedStatement stmt = connection.prepareStatement(sql);
+           stmt.setString(1,cliente.getCodigo());
+           stmt.setString(2,cliente.getNome());
+           stmt.setString(3,cliente.getTelefone());
+           stmt.setString(4,cliente.getRua());
+           stmt.setString(5,cliente.getNumero());
+           stmt.setString(6,cliente.getBairro());
+           stmt.setString(7,cliente.getBairro());
+           rs = stmt.executeQuery();
+           
+           if(rs.next()){
+               jtfnome.setText(rs.getString(2));
+               jtftelefone.setText(rs.getString(3));
+               jtfendereco.setText(rs.getString(4));
+               jtfnumero.setText(rs.getString(5));
+               jtfbairro.setText(rs.getString(6));
+               jtfcomplemento.setText(rs.getString(7));
+               
+           }else{
+               JOptionPane.showMessageDialog(null,"Cliente não cadastrado");
+               jtfnome.setText(null);
+               jtftelefone.setText(null);
+               jtfendereco.setText(null);
+               jtfbairro.setText(null);
+               jtfnumero.setText(null);
+               jtfcomplemento.setText(null);
+   
+           } 
+        }
+        catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
-    }
- 
-
+        
+    }   
 }
