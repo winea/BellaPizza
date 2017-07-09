@@ -37,11 +37,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelApresentacao = new javax.swing.JLabel();
         jButtonCadMotoboys = new javax.swing.JButton();
         jButtonCadClientes = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelLogo = new javax.swing.JLabel();
         jButtonFecharBemVindo = new javax.swing.JButton();
         jButtonCaixa = new javax.swing.JButton();
         jButtonEstoque = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelEstoque = new javax.swing.JLabel();
         jLabelFundoTelaPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
@@ -129,9 +129,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jButtonCadClientes);
         jButtonCadClientes.setBounds(30, 170, 90, 80);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(630, 80, 240, 180);
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.jpg"))); // NOI18N
+        getContentPane().add(jLabelLogo);
+        jLabelLogo.setBounds(630, 80, 240, 180);
 
         jButtonFecharBemVindo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/exit.png"))); // NOI18N
         jButtonFecharBemVindo.setToolTipText("Fechar Tela Bem Vindo");
@@ -161,10 +161,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jButtonEstoque);
         jButtonEstoque.setBounds(660, 360, 80, 80);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Estoque");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(660, 320, 90, 30);
+        jLabelEstoque.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelEstoque.setText("Estoque");
+        getContentPane().add(jLabelEstoque);
+        jLabelEstoque.setBounds(660, 320, 90, 30);
 
         jLabelFundoTelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
         getContentPane().add(jLabelFundoTelaPrincipal);
@@ -301,13 +301,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEstoque;
     private javax.swing.JButton jButtonFecharBemVindo;
     private javax.swing.JButton jButtonPedidos;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelApresentacao;
     private javax.swing.JLabel jLabelCadastro;
     private javax.swing.JLabel jLabelCaixa;
     private javax.swing.JLabel jLabelCardapio;
+    private javax.swing.JLabel jLabelEstoque;
     private javax.swing.JLabel jLabelFundoTelaPrincipal;
+    private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelPedidos;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
