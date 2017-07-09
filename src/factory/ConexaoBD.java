@@ -15,7 +15,7 @@ public class ConexaoBD {
     private String driver = "com.mysql.jdbc.Driver"; //identifica BD
     private String caminho = "jdbc:mysql://localhost:3306/bellapizza";
     private String usuario = "root";
-    private String senha = "3366";
+    private String senha = "seliormu6";
     public Connection con;
     
     public void conexao (){

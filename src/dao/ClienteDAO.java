@@ -8,6 +8,8 @@ import factory.ConexaoBD;
 import modelo.Cliente;
 import java.sql.*;
 import java.sql.PreparedStatement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class ClienteDAO {
@@ -63,5 +65,24 @@ public class ClienteDAO {
         
         conex.desconecta();
         
+    }
+    public Cliente pesquisa(Cliente cliente){
+        conex.conexao();
+        try {
+            PreparedStatement stmt = conex.con.prepareStatement("select * from cliente where Telefone like '%"+cliente.getPesquisa()+"%'");
+            conex.rs.first();
+            cliente.setCodigo(conex.rs.getInt("Codigo_Cliente"));
+            cliente.setNome(conex.rs.getString("Nome"));
+            cliente.setTelefone(conex.rs.getInt("Telefone"));
+            cliente.setRua(conex.rs.getString("Rua"));
+            cliente.setNumero(conex.rs.getInt("Numero"));
+            cliente.setBairro(conex.rs.getString("Bairro"));
+            cliente.setComplemento(conex.rs.getString("Complemento")); 
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Cliente não cadastrado"+ex);
+        }  
+        conex.desconecta();
+        return cliente;
     }
 }
