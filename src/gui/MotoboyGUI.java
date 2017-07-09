@@ -31,92 +31,76 @@ public class MotoboyGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtNomeMotoboy = new javax.swing.JTextField();
         btnSalvarMotoboy = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel1.setText("Cadastro de Motoboy");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastrar novo motoboy"));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("Cadastro de Motoboy");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 20, 160, 20);
 
-        jLabel2.setText("Nome:");
+        txtNomeMotoboy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeMotoboyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNomeMotoboy);
+        txtNomeMotoboy.setBounds(170, 70, 370, 20);
 
+        btnSalvarMotoboy.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSalvarMotoboy.setText("Salvar");
         btnSalvarMotoboy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarMotoboyActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSalvarMotoboy);
+        btnSalvarMotoboy.setBounds(450, 180, 90, 25);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSalvarMotoboy)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(50, 50, 50)
-                        .addComponent(txtNomeMotoboy, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtNomeMotoboy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
-                .addComponent(btnSalvarMotoboy)
-                .addGap(29, 29, 29))
-        );
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setText("Nome:");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(110, 70, 50, 15);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/funcionariopeq.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(20, 50, 60, 60);
 
-        pack();
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 590, 230);
+
+        setBounds(0, 0, 603, 262);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalvarMotoboyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarMotoboyActionPerformed
+    private void txtNomeMotoboyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeMotoboyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeMotoboyActionPerformed
 
+    private void btnSalvarMotoboyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarMotoboyActionPerformed
         Motoboy motoboys = new Motoboy();
         motoboys.setNomeMotoboy(txtNomeMotoboy.getText());
+
         if ((txtNomeMotoboy.getText().isEmpty())) {
-            JOptionPane.showMessageDialog(null, "Prencha o nome do motoboy");
+            JOptionPane.showMessageDialog(null, "Preencha o nome");
         } else {
 
-            MotoboyDAO motodao = new MotoboyDAO();
-            motodao.adiciona(motoboys);
+            MotoboyDAO dao = new MotoboyDAO();
+            dao.adiciona(motoboys);
             JOptionPane.showMessageDialog(null, "Motoboy " + txtNomeMotoboy.getText() + " inserido com sucesso! ");
         }
-        txtNomeMotoboy.setText("");  
+        txtNomeMotoboy.setText("");       
     }//GEN-LAST:event_btnSalvarMotoboyActionPerformed
 
     /**
@@ -145,6 +129,7 @@ public class MotoboyGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MotoboyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -158,7 +143,9 @@ public class MotoboyGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarMotoboy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField txtNomeMotoboy;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package factory;
+import gui.TelaRelatorioGUI;
 import java.sql.Connection; 
 import java.sql.SQLException; 
 /**
