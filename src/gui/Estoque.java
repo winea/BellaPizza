@@ -45,6 +45,8 @@ public class Estoque extends javax.swing.JFrame {
         jButtonAlterar = new javax.swing.JButton();
         jButtonNovo = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableEstoque = new javax.swing.JTable();
         jLabelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,9 +67,9 @@ public class Estoque extends javax.swing.JFrame {
         getContentPane().add(jLabelNome);
         jLabelNome.setBounds(250, 80, 50, 17);
         getContentPane().add(jTextFieldCodigo);
-        jTextFieldCodigo.setBounds(70, 110, 160, 20);
+        jTextFieldCodigo.setBounds(70, 110, 160, 30);
         getContentPane().add(jTextFieldNome);
-        jTextFieldNome.setBounds(250, 110, 300, 20);
+        jTextFieldNome.setBounds(250, 110, 300, 30);
 
         jLabelFornecedor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelFornecedor.setText("Fornecedor:");
@@ -85,16 +87,16 @@ public class Estoque extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldValor);
-        jTextFieldValor.setBounds(570, 110, 140, 20);
+        jTextFieldValor.setBounds(570, 110, 140, 30);
         getContentPane().add(jTextFieldFornecedor);
-        jTextFieldFornecedor.setBounds(70, 180, 430, 20);
+        jTextFieldFornecedor.setBounds(70, 180, 430, 30);
 
         jLabelEstoque.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelEstoque.setText("Estoque:");
         getContentPane().add(jLabelEstoque);
         jLabelEstoque.setBounds(550, 150, 80, 17);
         getContentPane().add(jTextFieldEstoque);
-        jTextFieldEstoque.setBounds(550, 180, 160, 20);
+        jTextFieldEstoque.setBounds(550, 180, 160, 30);
 
         jTextFieldPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,31 +104,81 @@ public class Estoque extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldPesquisar);
-        jTextFieldPesquisar.setBounds(70, 240, 470, 20);
+        jTextFieldPesquisar.setBounds(70, 230, 470, 30);
 
         jButtonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar.png"))); // NOI18N
         getContentPane().add(jButtonPesquisar);
-        jButtonPesquisar.setBounds(590, 230, 80, 30);
+        jButtonPesquisar.setBounds(590, 230, 40, 30);
 
-        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancelar.png"))); // NOI18N
+        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancel.png"))); // NOI18N
         jButtonCancelar.setToolTipText("Cancelar");
         getContentPane().add(jButtonCancelar);
-        jButtonCancelar.setBounds(90, 460, 60, 30);
+        jButtonCancelar.setBounds(110, 460, 40, 30);
 
-        jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/excluir.png"))); // NOI18N
+        jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair_1.png"))); // NOI18N
         jButtonExcluir.setToolTipText("Excluir");
         getContentPane().add(jButtonExcluir);
-        jButtonExcluir.setBounds(210, 460, 60, 30);
+        jButtonExcluir.setBounds(230, 460, 30, 30);
+
+        jButtonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alterar.png"))); // NOI18N
+        jButtonAlterar.setToolTipText("Alterar");
         getContentPane().add(jButtonAlterar);
-        jButtonAlterar.setBounds(320, 460, 70, 30);
+        jButtonAlterar.setBounds(340, 460, 30, 30);
+
+        jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/novo.png"))); // NOI18N
+        jButtonNovo.setToolTipText("Novo");
         getContentPane().add(jButtonNovo);
-        jButtonNovo.setBounds(450, 460, 70, 30);
+        jButtonNovo.setBounds(450, 460, 30, 30);
+
+        jButtonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/salvar.png"))); // NOI18N
+        jButtonSalvar.setToolTipText("Salvar");
         getContentPane().add(jButtonSalvar);
-        jButtonSalvar.setBounds(580, 460, 70, 30);
+        jButtonSalvar.setBounds(570, 460, 30, 30);
+
+        jTableEstoque.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableEstoque);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(70, 270, 600, 140);
 
         jLabelFundo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jLabelFundo);
-        jLabelFundo.setBounds(40, 60, 710, 450);
+        jLabelFundo.setBounds(30, 60, 710, 450);
 
         setSize(new java.awt.Dimension(801, 577));
         setLocationRelativeTo(null);
@@ -189,6 +241,8 @@ public class Estoque extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelFundo;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelValor;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableEstoque;
     private javax.swing.JTextField jTextFieldCodigo;
     private javax.swing.JTextField jTextFieldEstoque;
     private javax.swing.JTextField jTextFieldFornecedor;
