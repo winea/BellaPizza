@@ -27,21 +27,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jInternalFrameBemVindo = new javax.swing.JInternalFrame();
-        jPanelInternal = new javax.swing.JPanel();
-        jLabelCadastro = new javax.swing.JLabel();
-        jButtonCadClientes = new javax.swing.JButton();
-        jButtonCadFunc = new javax.swing.JButton();
+        jLabelCaixa = new javax.swing.JLabel();
+        jButtonCaixa = new javax.swing.JButton();
+        jLabelCardapio = new javax.swing.JLabel();
+        jButtonCardapio = new javax.swing.JButton();
         jLabelPedidos = new javax.swing.JLabel();
         jButtonPedidos = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabelPainelFundo = new javax.swing.JLabel();
-        jButtonFecharBemVindo = new javax.swing.JButton();
+        jLabelCadastro = new javax.swing.JLabel();
+        jLabelApresentacao = new javax.swing.JLabel();
+        jButtonCadFunc = new javax.swing.JButton();
+        jButtonCadClientes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel1FundoTelaPrincipal = new javax.swing.JLabel();
+        jButtonFecharBemVindo = new javax.swing.JButton();
+        jLabelFundoTelaPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
         jMenuItemCadClientes = new javax.swing.JMenuItem();
@@ -58,64 +56,59 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jInternalFrameBemVindo.setTitle("Bem Vindo");
-        jInternalFrameBemVindo.setVisible(true);
-        jInternalFrameBemVindo.getContentPane().setLayout(null);
+        jLabelCaixa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCaixa.setText("Relatorios");
+        getContentPane().add(jLabelCaixa);
+        jLabelCaixa.setBounds(350, 320, 100, 30);
 
-        jPanelInternal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanelInternal.setLayout(null);
+        jButtonCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/caixa.png"))); // NOI18N
+        jButtonCaixa.setToolTipText("Caixa");
+        getContentPane().add(jButtonCaixa);
+        jButtonCaixa.setBounds(350, 360, 80, 80);
 
-        jLabelCadastro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelCadastro.setText("Cadastros");
-        jPanelInternal.add(jLabelCadastro);
-        jLabelCadastro.setBounds(20, 10, 80, 30);
+        jLabelCardapio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCardapio.setText("Cardapio");
+        getContentPane().add(jLabelCardapio);
+        jLabelCardapio.setBounds(70, 330, 110, 20);
 
-        jButtonCadClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/clientes.png"))); // NOI18N
-        jButtonCadClientes.setToolTipText("Clientes");
-        jPanelInternal.add(jButtonCadClientes);
-        jButtonCadClientes.setBounds(10, 40, 90, 80);
-
-        jButtonCadFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/funcionariopeq.png"))); // NOI18N
-        jButtonCadFunc.setToolTipText("Funcionarios");
-        jPanelInternal.add(jButtonCadFunc);
-        jButtonCadFunc.setBounds(120, 40, 90, 80);
+        jButtonCardapio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cardapio.png"))); // NOI18N
+        jButtonCardapio.setToolTipText("Cardapio Pizzas");
+        getContentPane().add(jButtonCardapio);
+        jButtonCardapio.setBounds(60, 360, 70, 80);
 
         jLabelPedidos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelPedidos.setText("Pedidos");
-        jPanelInternal.add(jLabelPedidos);
-        jLabelPedidos.setBounds(390, 10, 100, 20);
+        getContentPane().add(jLabelPedidos);
+        jLabelPedidos.setBounds(370, 140, 100, 20);
 
         jButtonPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pizzap.png"))); // NOI18N
         jButtonPedidos.setToolTipText("Pedidos Clientes");
-        jPanelInternal.add(jButtonPedidos);
-        jButtonPedidos.setBounds(390, 40, 80, 80);
+        getContentPane().add(jButtonPedidos);
+        jButtonPedidos.setBounds(370, 170, 80, 80);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Cardapio");
-        jPanelInternal.add(jLabel2);
-        jLabel2.setBounds(680, 10, 110, 20);
+        jLabelCadastro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCadastro.setText("Cadastros");
+        getContentPane().add(jLabelCadastro);
+        jLabelCadastro.setBounds(30, 130, 80, 30);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cardapio.png"))); // NOI18N
-        jButton1.setToolTipText("Cardapio Pizzas");
-        jPanelInternal.add(jButton1);
-        jButton1.setBounds(680, 40, 70, 80);
+        jLabelApresentacao.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelApresentacao.setText("Sistema de Gerenciamento de:");
+        getContentPane().add(jLabelApresentacao);
+        jLabelApresentacao.setBounds(20, 40, 290, 30);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Relatorios");
-        jPanelInternal.add(jLabel3);
-        jLabel3.setBounds(20, 160, 100, 30);
+        jButtonCadFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/funcionariopeq.png"))); // NOI18N
+        jButtonCadFunc.setToolTipText("Funcionarios");
+        getContentPane().add(jButtonCadFunc);
+        jButtonCadFunc.setBounds(140, 170, 90, 80);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/caixa.png"))); // NOI18N
-        jButton2.setToolTipText("Caixa");
-        jPanelInternal.add(jButton2);
-        jButton2.setBounds(20, 190, 80, 80);
+        jButtonCadClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/clientes.png"))); // NOI18N
+        jButtonCadClientes.setToolTipText("Clientes");
+        getContentPane().add(jButtonCadClientes);
+        jButtonCadClientes.setBounds(30, 170, 90, 80);
 
-        jLabelPainelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/internal.jpg"))); // NOI18N
-        jPanelInternal.add(jLabelPainelFundo);
-        jLabelPainelFundo.setBounds(0, 0, 990, 360);
-
-        jInternalFrameBemVindo.getContentPane().add(jPanelInternal);
-        jPanelInternal.setBounds(0, 50, 990, 360);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(630, 80, 240, 180);
 
         jButtonFecharBemVindo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/exit.png"))); // NOI18N
         jButtonFecharBemVindo.setToolTipText("Fechar Tela Bem Vindo");
@@ -124,20 +117,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 jButtonFecharBemVindoActionPerformed(evt);
             }
         });
-        jInternalFrameBemVindo.getContentPane().add(jButtonFecharBemVindo);
-        jButtonFecharBemVindo.setBounds(830, 0, 60, 50);
+        getContentPane().add(jButtonFecharBemVindo);
+        jButtonFecharBemVindo.setBounds(940, 10, 60, 50);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Sistema de Gerenciamento de:");
-        jInternalFrameBemVindo.getContentPane().add(jLabel1);
-        jLabel1.setBounds(14, 10, 290, 30);
-
-        getContentPane().add(jInternalFrameBemVindo);
-        jInternalFrameBemVindo.setBounds(0, 110, 900, 440);
-
-        jLabel1FundoTelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
-        getContentPane().add(jLabel1FundoTelaPrincipal);
-        jLabel1FundoTelaPrincipal.setBounds(0, 0, 1020, 550);
+        jLabelFundoTelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
+        getContentPane().add(jLabelFundoTelaPrincipal);
+        jLabelFundoTelaPrincipal.setBounds(0, 0, 1020, 550);
 
         jMenuCadastro.setText("Cadastro");
 
@@ -188,7 +173,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonFecharBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharBemVindoActionPerformed
-       jInternalFrameBemVindo.dispose();
+      System.exit(0);
     }//GEN-LAST:event_jButtonFecharBemVindoActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
@@ -231,19 +216,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonCadClientes;
     private javax.swing.JButton jButtonCadFunc;
+    private javax.swing.JButton jButtonCaixa;
+    private javax.swing.JButton jButtonCardapio;
     private javax.swing.JButton jButtonFecharBemVindo;
     private javax.swing.JButton jButtonPedidos;
-    private javax.swing.JInternalFrame jInternalFrameBemVindo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel1FundoTelaPrincipal;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelApresentacao;
     private javax.swing.JLabel jLabelCadastro;
-    private javax.swing.JLabel jLabelPainelFundo;
+    private javax.swing.JLabel jLabelCaixa;
+    private javax.swing.JLabel jLabelCardapio;
+    private javax.swing.JLabel jLabelFundoTelaPrincipal;
     private javax.swing.JLabel jLabelPedidos;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
@@ -257,6 +241,5 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuPedidos;
     private javax.swing.JMenu jMenuRelatorios;
     private javax.swing.JMenu jMenuSair;
-    private javax.swing.JPanel jPanelInternal;
     // End of variables declaration//GEN-END:variables
 }
