@@ -28,7 +28,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelCaixa = new javax.swing.JLabel();
-        jButtonCaixa = new javax.swing.JButton();
+        jButtonControle = new javax.swing.JButton();
         jLabelCardapio = new javax.swing.JLabel();
         jButtonCardapio = new javax.swing.JButton();
         jLabelPedidos = new javax.swing.JLabel();
@@ -39,6 +39,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonCadClientes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonFecharBemVindo = new javax.swing.JButton();
+        jButtonCaixa = new javax.swing.JButton();
+        jButtonEstoque = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabelFundoTelaPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
@@ -56,25 +59,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabelCaixa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCaixa.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelCaixa.setText("Relatorios");
         getContentPane().add(jLabelCaixa);
         jLabelCaixa.setBounds(350, 320, 100, 30);
 
-        jButtonCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/caixa.png"))); // NOI18N
-        jButtonCaixa.setToolTipText("Caixa");
-        jButtonCaixa.addActionListener(new java.awt.event.ActionListener() {
+        jButtonControle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/controle.png"))); // NOI18N
+        jButtonControle.setToolTipText("Caixa");
+        jButtonControle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCaixaActionPerformed(evt);
+                jButtonControleActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCaixa);
-        jButtonCaixa.setBounds(350, 360, 80, 80);
+        getContentPane().add(jButtonControle);
+        jButtonControle.setBounds(450, 360, 80, 80);
 
-        jLabelCardapio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCardapio.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelCardapio.setText("Cardapio");
         getContentPane().add(jLabelCardapio);
-        jLabelCardapio.setBounds(70, 330, 110, 20);
+        jLabelCardapio.setBounds(60, 330, 110, 20);
 
         jButtonCardapio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cardapio.png"))); // NOI18N
         jButtonCardapio.setToolTipText("Cardapio Pizzas");
@@ -86,25 +89,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jButtonCardapio);
         jButtonCardapio.setBounds(60, 360, 70, 80);
 
-        jLabelPedidos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelPedidos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelPedidos.setText("Pedidos");
         getContentPane().add(jLabelPedidos);
-        jLabelPedidos.setBounds(370, 140, 100, 20);
+        jLabelPedidos.setBounds(340, 140, 90, 20);
 
         jButtonPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pizzap.png"))); // NOI18N
         jButtonPedidos.setToolTipText("Pedidos Clientes");
         getContentPane().add(jButtonPedidos);
-        jButtonPedidos.setBounds(370, 170, 80, 80);
+        jButtonPedidos.setBounds(340, 170, 80, 80);
 
-        jLabelCadastro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCadastro.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelCadastro.setText("Cadastros");
         getContentPane().add(jLabelCadastro);
-        jLabelCadastro.setBounds(30, 130, 80, 30);
+        jLabelCadastro.setBounds(30, 130, 90, 30);
 
-        jLabelApresentacao.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelApresentacao.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelApresentacao.setText("Sistema de Gerenciamento de:");
         getContentPane().add(jLabelApresentacao);
-        jLabelApresentacao.setBounds(20, 40, 290, 30);
+        jLabelApresentacao.setBounds(20, 40, 370, 30);
 
         jButtonCadMotoboys.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/motoboy.png"))); // NOI18N
         jButtonCadMotoboys.setToolTipText("Motoboy");
@@ -139,6 +142,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonFecharBemVindo);
         jButtonFecharBemVindo.setBounds(940, 10, 60, 50);
+
+        jButtonCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/caixa.png"))); // NOI18N
+        jButtonCaixa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCaixaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCaixa);
+        jButtonCaixa.setBounds(350, 360, 80, 80);
+
+        jButtonEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Ingredients.png"))); // NOI18N
+        jButtonEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEstoqueActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonEstoque);
+        jButtonEstoque.setBounds(660, 360, 80, 80);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Estoque");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(660, 320, 90, 30);
 
         jLabelFundoTelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
         getContentPane().add(jLabelFundoTelaPrincipal);
@@ -218,10 +244,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         moto.setVisible(true);
     }//GEN-LAST:event_jButtonCadMotoboysActionPerformed
 
-    private void jButtonCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCaixaActionPerformed
+    private void jButtonControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonControleActionPerformed
         TelaRelatorioGUI r = new TelaRelatorioGUI();
         r.setVisible(true);
+    }//GEN-LAST:event_jButtonControleActionPerformed
+
+    private void jButtonCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCaixaActionPerformed
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCaixaActionPerformed
+
+    private void jButtonEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEstoqueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,9 +297,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCadMotoboys;
     private javax.swing.JButton jButtonCaixa;
     private javax.swing.JButton jButtonCardapio;
+    private javax.swing.JButton jButtonControle;
+    private javax.swing.JButton jButtonEstoque;
     private javax.swing.JButton jButtonFecharBemVindo;
     private javax.swing.JButton jButtonPedidos;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelApresentacao;
     private javax.swing.JLabel jLabelCadastro;
     private javax.swing.JLabel jLabelCaixa;
