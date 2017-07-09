@@ -108,6 +108,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jButtonCadClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/clientes.png"))); // NOI18N
         jButtonCadClientes.setToolTipText("Clientes");
+        jButtonCadClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadClientesActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonCadClientes);
         jButtonCadClientes.setBounds(30, 170, 90, 80);
 
@@ -185,10 +190,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSairActionPerformed
 
+
     private void jButtonCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCardapioActionPerformed
         Cardapio c = new Cardapio();
         c.setVisible(true);
     }//GEN-LAST:event_jButtonCardapioActionPerformed
+
+    private void jButtonCadClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadClientesActionPerformed
+        // TODO add your handling code here:
+        TelaCliente cliente = new TelaCliente();
+        cliente.setVisible(true);
+        
+    }//GEN-LAST:event_jButtonCadClientesActionPerformed
 
     /**
      * @param args the command line arguments
