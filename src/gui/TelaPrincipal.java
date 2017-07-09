@@ -238,7 +238,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jButtonCadClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadClientesActionPerformed
         // TODO add your handling code here:
-        TelaCliente cliente = new TelaCliente();
+        ClienteGUI cliente = new ClienteGUI();
         cliente.setVisible(true);
         
     }//GEN-LAST:event_jButtonCadClientesActionPerformed

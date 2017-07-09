@@ -9,7 +9,7 @@ import modelo.Cliente;
 import java.sql.*;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
-import gui.TelaCliente;
+import gui.ClienteGUI;
 
 public class ClienteDAO {
     private Connection connection;
