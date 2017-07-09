@@ -47,6 +47,7 @@ public class Estoque extends javax.swing.JFrame {
         jButtonSalvar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableEstoque = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
         jLabelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -168,13 +169,15 @@ public class Estoque extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Codigo", "Nome", "Quantidade", "Preço"
             }
         ));
         jScrollPane1.setViewportView(jTableEstoque);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(70, 270, 600, 140);
+        jScrollPane1.setBounds(70, 290, 600, 140);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(60, 290, 640, 130);
 
         jLabelFundo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jLabelFundo);
@@ -234,6 +237,7 @@ public class Estoque extends javax.swing.JFrame {
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JButton jButtonSalvar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2Estoque;
     private javax.swing.JLabel jLabelCodigo;
     private javax.swing.JLabel jLabelEstoque;
