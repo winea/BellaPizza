@@ -40,7 +40,7 @@ public class TelaFluxodeCaixa extends javax.swing.JFrame {
         txtValorTotal = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/caixa.png"))); // NOI18N
@@ -123,7 +123,7 @@ public class TelaFluxodeCaixa extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 890, 490);
+        jLabel1.setBounds(0, 0, 890, 510);
 
         setSize(new java.awt.Dimension(902, 545));
         setLocationRelativeTo(null);
