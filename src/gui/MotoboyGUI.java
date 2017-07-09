@@ -5,6 +5,10 @@
  */
 package gui;
 
+import dao.MotoboyDAO;
+import javax.swing.JOptionPane;
+import modelo.Motoboy;
+
 /**
  *
  * @author Laryssa
@@ -101,7 +105,18 @@ public class MotoboyGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarMotoboyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarMotoboyActionPerformed
-//TESTE
+
+        Motoboy motoboys = new Motoboy();
+        motoboys.setNomeMotoboy(txtNomeMotoboy.getText());
+        if ((txtNomeMotoboy.getText().isEmpty())) {
+            JOptionPane.showMessageDialog(null, "Prencha o nome do motoboy");
+        } else {
+
+            MotoboyDAO motodao = new MotoboyDAO();
+            motodao.adiciona(motoboys);
+            JOptionPane.showMessageDialog(null, "Motoboy " + txtNomeMotoboy.getText() + " inserido com sucesso! ");
+        }
+        txtNomeMotoboy.setText("");  
     }//GEN-LAST:event_btnSalvarMotoboyActionPerformed
 
     /**
