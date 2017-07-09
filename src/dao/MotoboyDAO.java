@@ -8,7 +8,6 @@ import factory.ConnectionFactory;
 import modelo.Motoboy;
 import java.sql.*;
 import java.sql.PreparedStatement;
-import java.Util;
 /**
  *
  * @author Laryssa
@@ -16,7 +15,6 @@ import java.Util;
 public class MotoboyDAO {
     private Connection connection;
     String nome;
-    String ola;
     
     public MotoboyDAO(){ 
         this.connection = new ConnectionFactory().getConnection();
