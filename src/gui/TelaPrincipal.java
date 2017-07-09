@@ -35,7 +35,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonPedidos = new javax.swing.JButton();
         jLabelCadastro = new javax.swing.JLabel();
         jLabelApresentacao = new javax.swing.JLabel();
-        jButtonCadFunc = new javax.swing.JButton();
+        jButtonCadMotoboys = new javax.swing.JButton();
         jButtonCadClientes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonFecharBemVindo = new javax.swing.JButton();
@@ -73,6 +73,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jButtonCardapio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cardapio.png"))); // NOI18N
         jButtonCardapio.setToolTipText("Cardapio Pizzas");
+        jButtonCardapio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCardapioActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonCardapio);
         jButtonCardapio.setBounds(60, 360, 70, 80);
 
@@ -96,10 +101,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jLabelApresentacao);
         jLabelApresentacao.setBounds(20, 40, 290, 30);
 
-        jButtonCadFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/funcionariopeq.png"))); // NOI18N
-        jButtonCadFunc.setToolTipText("Funcionarios");
-        getContentPane().add(jButtonCadFunc);
-        jButtonCadFunc.setBounds(140, 170, 90, 80);
+        jButtonCadMotoboys.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/motoboy.png"))); // NOI18N
+        jButtonCadMotoboys.setToolTipText("Funcionarios");
+        getContentPane().add(jButtonCadMotoboys);
+        jButtonCadMotoboys.setBounds(140, 170, 90, 80);
 
         jButtonCadClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/clientes.png"))); // NOI18N
         jButtonCadClientes.setToolTipText("Clientes");
@@ -180,6 +185,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSairActionPerformed
 
+    private void jButtonCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCardapioActionPerformed
+        Cardapio c = new Cardapio();
+        c.setVisible(true);
+    }//GEN-LAST:event_jButtonCardapioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -217,7 +227,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadClientes;
-    private javax.swing.JButton jButtonCadFunc;
+    private javax.swing.JButton jButtonCadMotoboys;
     private javax.swing.JButton jButtonCaixa;
     private javax.swing.JButton jButtonCardapio;
     private javax.swing.JButton jButtonFecharBemVindo;

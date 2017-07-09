@@ -5,6 +5,8 @@
  */
 package gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Winy
@@ -86,14 +88,17 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarActionPerformed
+        if (jTextFieldUsuario.getText().equals("admin")&& jTextFieldSenha.getText().equals("1234")){
         TelaPrincipal tela = new TelaPrincipal();
         tela.setVisible(true);
         dispose();//fecha tela anterior
-        //teste
+        }else {
+        JOptionPane.showMessageDialog(rootPane, "Senha ou Usuario Invalido!");
+        }
     }//GEN-LAST:event_jButtonAcessarActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     /**
