@@ -50,7 +50,7 @@ public class Estoque extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabelFundo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jLabel2Estoque.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -108,65 +108,48 @@ public class Estoque extends javax.swing.JFrame {
         jTextFieldPesquisar.setBounds(70, 230, 470, 30);
 
         jButtonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar.png"))); // NOI18N
+        jButtonPesquisar.setText("Pesquisar");
+        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonPesquisar);
-        jButtonPesquisar.setBounds(590, 230, 40, 30);
+        jButtonPesquisar.setBounds(590, 230, 120, 30);
 
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancel.png"))); // NOI18N
+        jButtonCancelar.setText(" Cancelar");
         jButtonCancelar.setToolTipText("Cancelar");
         getContentPane().add(jButtonCancelar);
-        jButtonCancelar.setBounds(110, 460, 40, 30);
+        jButtonCancelar.setBounds(60, 460, 120, 30);
 
         jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair_1.png"))); // NOI18N
+        jButtonExcluir.setText("Excluir");
         jButtonExcluir.setToolTipText("Excluir");
         getContentPane().add(jButtonExcluir);
-        jButtonExcluir.setBounds(230, 460, 30, 30);
+        jButtonExcluir.setBounds(200, 460, 100, 30);
 
         jButtonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alterar.png"))); // NOI18N
+        jButtonAlterar.setText("Alterar");
         jButtonAlterar.setToolTipText("Alterar");
         getContentPane().add(jButtonAlterar);
-        jButtonAlterar.setBounds(340, 460, 30, 30);
+        jButtonAlterar.setBounds(320, 460, 100, 30);
 
         jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/novo.png"))); // NOI18N
+        jButtonNovo.setText("Adicionar");
         jButtonNovo.setToolTipText("Novo");
         getContentPane().add(jButtonNovo);
-        jButtonNovo.setBounds(450, 460, 30, 30);
+        jButtonNovo.setBounds(440, 460, 110, 30);
 
         jButtonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/salvar.png"))); // NOI18N
+        jButtonSalvar.setText("Salvar");
         jButtonSalvar.setToolTipText("Salvar");
         getContentPane().add(jButtonSalvar);
-        jButtonSalvar.setBounds(570, 460, 30, 30);
+        jButtonSalvar.setBounds(570, 460, 110, 30);
 
         jTableEstoque.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Codigo", "Nome", "Quantidade", "Preço"
@@ -194,6 +177,10 @@ public class Estoque extends javax.swing.JFrame {
     private void jTextFieldPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesquisarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldPesquisarActionPerformed
+
+    private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
     /**
      * @param args the command line arguments

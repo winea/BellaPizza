@@ -5,17 +5,17 @@
  */
 package gui;
 
+
 /**
  *
  * @author Winy
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form TelaPrincipal
-     */
+ 
+    
     public TelaPrincipal() {
         initComponents();
+       
     }
 
     /**
@@ -72,7 +72,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonControle);
-        jButtonControle.setBounds(450, 360, 80, 80);
+        jButtonControle.setBounds(520, 360, 80, 80);
 
         jLabelCardapio.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelCardapio.setText("Cardapio");
@@ -80,6 +80,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelCardapio.setBounds(60, 330, 110, 20);
 
         jButtonCardapio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cardapio.png"))); // NOI18N
+        jButtonCardapio.setText("Pizzas");
         jButtonCardapio.setToolTipText("Cardapio Pizzas");
         jButtonCardapio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,17 +88,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonCardapio);
-        jButtonCardapio.setBounds(60, 360, 70, 80);
+        jButtonCardapio.setBounds(60, 360, 140, 80);
 
         jLabelPedidos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelPedidos.setText("Pedidos");
         getContentPane().add(jLabelPedidos);
-        jLabelPedidos.setBounds(340, 140, 90, 20);
+        jLabelPedidos.setBounds(520, 140, 90, 20);
 
         jButtonPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pizzap.png"))); // NOI18N
         jButtonPedidos.setToolTipText("Pedidos Clientes");
         getContentPane().add(jButtonPedidos);
-        jButtonPedidos.setBounds(340, 170, 80, 80);
+        jButtonPedidos.setBounds(520, 170, 90, 80);
 
         jLabelCadastro.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelCadastro.setText("Cadastros");
@@ -110,6 +111,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelApresentacao.setBounds(20, 40, 370, 30);
 
         jButtonCadMotoboys.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/motoboy.png"))); // NOI18N
+        jButtonCadMotoboys.setText("Entregadores");
         jButtonCadMotoboys.setToolTipText("Motoboy");
         jButtonCadMotoboys.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,9 +119,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonCadMotoboys);
-        jButtonCadMotoboys.setBounds(140, 170, 90, 80);
+        jButtonCadMotoboys.setBounds(210, 170, 170, 80);
 
         jButtonCadClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/clientes.png"))); // NOI18N
+        jButtonCadClientes.setText("Clientes");
         jButtonCadClientes.setToolTipText("Clientes");
         jButtonCadClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,11 +130,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonCadClientes);
-        jButtonCadClientes.setBounds(30, 170, 90, 80);
+        jButtonCadClientes.setBounds(30, 170, 150, 80);
 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.jpg"))); // NOI18N
         getContentPane().add(jLabelLogo);
-        jLabelLogo.setBounds(630, 80, 240, 180);
+        jLabelLogo.setBounds(680, 70, 240, 180);
 
         jButtonFecharBemVindo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/exit.png"))); // NOI18N
         jButtonFecharBemVindo.setToolTipText("Fechar Tela Bem Vindo");
@@ -144,13 +147,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonFecharBemVindo.setBounds(940, 10, 60, 50);
 
         jButtonCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/caixa.png"))); // NOI18N
+        jButtonCaixa.setText("Caixa");
         jButtonCaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCaixaActionPerformed(evt);
             }
         });
         getContentPane().add(jButtonCaixa);
-        jButtonCaixa.setBounds(350, 360, 80, 80);
+        jButtonCaixa.setBounds(350, 360, 140, 80);
 
         jButtonEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Ingredients.png"))); // NOI18N
         jButtonEstoque.addActionListener(new java.awt.event.ActionListener() {
@@ -159,12 +163,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonEstoque);
-        jButtonEstoque.setBounds(660, 360, 80, 80);
+        jButtonEstoque.setBounds(780, 360, 80, 80);
 
         jLabelEstoque.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelEstoque.setText("Estoque");
         getContentPane().add(jLabelEstoque);
-        jLabelEstoque.setBounds(660, 320, 90, 30);
+        jLabelEstoque.setBounds(780, 320, 90, 30);
 
         jLabelFundoTelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
         getContentPane().add(jLabelFundoTelaPrincipal);
@@ -175,7 +179,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItemCadClientes.setText("Clientes");
         jMenuCadastro.add(jMenuItemCadClientes);
 
-        jMenuItemCadFuncionarios.setText("Funcionarios");
+        jMenuItemCadFuncionarios.setText("Entregadores");
         jMenuCadastro.add(jMenuItemCadFuncionarios);
 
         jMenuBar1.add(jMenuCadastro);
@@ -254,7 +258,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCaixaActionPerformed
 
     private void jButtonEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstoqueActionPerformed
-        // TODO add your handling code here:
+        Estoque e = new Estoque();
+        e.setVisible(true);
     }//GEN-LAST:event_jButtonEstoqueActionPerformed
 
     /**
