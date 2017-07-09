@@ -37,7 +37,7 @@ public class TelaRelatorioGUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         comboPedidos = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Busca por cliente:");
 

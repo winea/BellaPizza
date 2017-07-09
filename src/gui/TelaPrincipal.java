@@ -63,6 +63,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jButtonCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/caixa.png"))); // NOI18N
         jButtonCaixa.setToolTipText("Caixa");
+        jButtonCaixa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCaixaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonCaixa);
         jButtonCaixa.setBounds(350, 360, 80, 80);
 
@@ -102,7 +107,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelApresentacao.setBounds(20, 40, 290, 30);
 
         jButtonCadMotoboys.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/motoboy.png"))); // NOI18N
-        jButtonCadMotoboys.setToolTipText("Funcionarios");
+        jButtonCadMotoboys.setToolTipText("Motoboy");
+        jButtonCadMotoboys.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadMotoboysActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonCadMotoboys);
         jButtonCadMotoboys.setBounds(140, 170, 90, 80);
 
@@ -202,6 +212,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cliente.setVisible(true);
         
     }//GEN-LAST:event_jButtonCadClientesActionPerformed
+
+    private void jButtonCadMotoboysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadMotoboysActionPerformed
+        MotoboyGUI moto = new MotoboyGUI();
+        moto.setVisible(true);
+    }//GEN-LAST:event_jButtonCadMotoboysActionPerformed
+
+    private void jButtonCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCaixaActionPerformed
+        TelaRelatorioGUI r = new TelaRelatorioGUI();
+        r.setVisible(true);
+    }//GEN-LAST:event_jButtonCaixaActionPerformed
 
     /**
      * @param args the command line arguments
