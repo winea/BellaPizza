@@ -178,6 +178,7 @@ CREATE TABLE `pizza` (
 
 LOCK TABLES `pizza` WRITE;
 /*!40000 ALTER TABLE `pizza` DISABLE KEYS */;
+INSERT INTO `pizza` VALUES (1,'alho e oleo',NULL,25,1),(2,'aliche',NULL,27,2),(3,'a moda',NULL,29,3),(4,'atum com catupiry',NULL,27,4),(5,'bacon',NULL,25,5),(6,'baiana',NULL,25,6),(7,'bauru',NULL,25,7),(8,'brocolis',NULL,25,8),(9,'calabresa',NULL,25,9),(10,'camarao',NULL,33,10),(11,'carne seca',NULL,29,11),(12,'catupiresa',NULL,27,12),(13,'escarola',NULL,25,13),(14,'espanhola',NULL,29,14),(15,'fascinante',NULL,29,15),(16,'fiorentina',NULL,29,16),(17,'frango com catupiry',NULL,27,17),(18,'frango com mussarela',NULL,25,18),(19,'italia',NULL,29,19),(20,'lombo com catupiry',NULL,27,20),(21,'manjericao',NULL,25,21),(22,'marguerita',NULL,25,22),(23,'milho verde',NULL,25,23),(24,'mussarela',NULL,25,24),(25,'palmito',NULL,27,25),(26,'paulista',NULL,27,26),(27,'portuguesa',NULL,29,27),(28,'salame',NULL,29,28);
 /*!40000 ALTER TABLE `pizza` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
