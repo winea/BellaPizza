@@ -6,7 +6,8 @@
 package gui;
 
 import dao.EstoqueDAO;
-import factory.ConexaoBD;
+import factory.ConnectionFactory;
+import javax.swing.JOptionPane;
 import modelo.EstoqueModelo;
 
 /**
@@ -17,7 +18,7 @@ public class Estoque extends javax.swing.JFrame {
 
     EstoqueModelo mod = new EstoqueModelo();
     EstoqueDAO control = new EstoqueDAO();
-    ConexaoBD conex = new ConexaoBD();
+    ConnectionFactory conex = new ConnectionFactory();
     
     public Estoque() {
         initComponents();
@@ -201,21 +202,25 @@ public class Estoque extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldPesquisarActionPerformed
 
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
-       mod.setPesquisa(jTextFieldPesquisar.getText());
-       EstoqueModelo model = control.Pesquisar(mod);
-       jTextFieldCodigo.setText(String.valueOf(model.getCodigo()));
-       jTextFieldNome.setText(model.getNome());
-       jTextFieldQuantidade.setText(String.valueOf(model.getQuant()));
-       jTextFieldValor.setText(String.valueOf(model.getPreco()));
-       jButtonAlterar.setEnabled(true);
-       jButtonExcluir.setEnabled(true);
+      
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         mod.setNome(jTextFieldNome.getText());
         mod.setQuant(Integer.parseInt(jTextFieldQuantidade.getText()));
         mod.setPreco((int) Double.parseDouble(jTextFieldValor.getText()));
-        control.Salvar(mod);
+    
+
+        if ((jTextFieldNome.getText().isEmpty())) {
+            JOptionPane.showMessageDialog(null, "Preencha o nome do Produto");
+        } else {
+            control.salvar(mod);
+            JOptionPane.showMessageDialog(null, "Produto " + jTextFieldNome.getText().toUpperCase() + " inserido com sucesso! ");
+        }
+        jTextFieldNome.setText("");
+        jTextFieldCodigo.setText("");
+        jTextFieldQuantidade.setText("");
+        jTextFieldQuantidade.setText("");
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jTextFieldQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeActionPerformed
