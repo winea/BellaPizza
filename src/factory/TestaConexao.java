@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package factory;
+import gui.MotoboyGUI;
+import gui.TelaRelatorioGUI;
 import java.sql.Connection; 
 import java.sql.SQLException; 
 /**
@@ -13,8 +15,10 @@ import java.sql.SQLException;
 public class TestaConexao {
     public static void main(String[] args) throws SQLException{
         Connection connection = new ConnectionFactory().getConnection();
-        connection.close();
-        System.out.println("Conexão aberta!");
+        MotoboyGUI tela = new MotoboyGUI();
+        tela.setVisible(true);
+        //connection.close();
+        //System.out.println("Conexão aberta!");
         
     }
 }

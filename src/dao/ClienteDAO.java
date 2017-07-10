@@ -39,7 +39,6 @@ public class ClienteDAO {
         conex.desconecta();
         
     }
-    
     /**
      *
      * @param cliente

@@ -1,7 +1,13 @@
 
 package gui;
 
+
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import factory.ConexaoBD;
+
 
 
 /**
@@ -250,7 +256,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCadMotoboysActionPerformed
 
     private void jButtonControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonControleActionPerformed
-        TelaRelatorioGUI r = new TelaRelatorioGUI();
+        TelaRelatorioGUI r = null;
+        try {
+            r = new TelaRelatorioGUI();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         r.setVisible(true);
     }//GEN-LAST:event_jButtonControleActionPerformed
 
