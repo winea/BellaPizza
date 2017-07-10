@@ -36,7 +36,8 @@ public class MotoboyGUI extends javax.swing.JFrame {
         txtNomeMotoboy = new javax.swing.JTextField();
         btnSalvarMotoboy = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        btnLimpar = new javax.swing.JButton();
+        btnRemoverMotoboy = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
@@ -65,23 +66,39 @@ public class MotoboyGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSalvarMotoboy);
-        btnSalvarMotoboy.setBounds(450, 180, 90, 25);
+        btnSalvarMotoboy.setBounds(190, 180, 90, 25);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Nome:");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(110, 70, 50, 15);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/funcionariopeq.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 50, 60, 60);
+        btnLimpar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimpar);
+        btnLimpar.setBounds(320, 180, 90, 25);
+
+        btnRemoverMotoboy.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnRemoverMotoboy.setText("Remover");
+        btnRemoverMotoboy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverMotoboyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRemoverMotoboy);
+        btnRemoverMotoboy.setBounds(450, 180, 100, 25);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaP.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 590, 230);
 
-        setBounds(0, 0, 603, 262);
+        setBounds(0, 0, 603, 263);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNomeMotoboyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeMotoboyActionPerformed
@@ -98,10 +115,27 @@ public class MotoboyGUI extends javax.swing.JFrame {
 
             MotoboyDAO dao = new MotoboyDAO();
             dao.adiciona(motoboys);
-            JOptionPane.showMessageDialog(null, "Motoboy " + txtNomeMotoboy.getText() + " inserido com sucesso! ");
+            JOptionPane.showMessageDialog(null, "Motoboy " + txtNomeMotoboy.getText().toUpperCase() + " inserido com sucesso! ");
         }
         txtNomeMotoboy.setText("");       
     }//GEN-LAST:event_btnSalvarMotoboyActionPerformed
+
+    private void btnRemoverMotoboyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverMotoboyActionPerformed
+        String nomeMotoboy = txtNomeMotoboy.getText().toString();
+        if ((txtNomeMotoboy.getText().isEmpty())) {
+            JOptionPane.showMessageDialog(null, "Preencha o nome para ser excluido");
+        } else {
+            Motoboy motoboys = new Motoboy();
+            MotoboyDAO dao = new MotoboyDAO(); 
+            dao.remove(motoboys,nomeMotoboy);
+            JOptionPane.showMessageDialog(null, "Motoboy " + txtNomeMotoboy.getText().toUpperCase() + " excluido com sucesso! ");
+        }
+        txtNomeMotoboy.setText("");      
+    }//GEN-LAST:event_btnRemoverMotoboyActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        txtNomeMotoboy.setText("");
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,8 +174,9 @@ public class MotoboyGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnRemoverMotoboy;
     private javax.swing.JButton btnSalvarMotoboy;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
