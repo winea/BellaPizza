@@ -60,6 +60,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         jtfpesquisatel = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cadastro Cliente");
 
         jLabel1.setText("Codigo:");
 
@@ -104,6 +105,11 @@ public class ClienteGUI extends javax.swing.JFrame {
         });
 
         btnpesquisar.setText("Pesquisar");
+        btnpesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpesquisarActionPerformed(evt);
+            }
+        });
 
         jtfpesquisatel.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfpesquisatel.setText("Telefone");
@@ -118,7 +124,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,11 +163,11 @@ public class ClienteGUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jtfnumero))
+                                .addComponent(jtfnumero, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(41, 41, 41)
                                 .addComponent(btneditar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +271,21 @@ public class ClienteGUI extends javax.swing.JFrame {
 
     private void jtfpesquisatelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfpesquisatelActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jtfpesquisatelActionPerformed
+
+    private void btnpesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpesquisarActionPerformed
+        // TODO add your handling code here:
+        cliente.setPesquisa(Integer.parseInt(jtfpesquisatel.getText()));
+        cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
+        cliente.setNome(jtfnome.getText());
+        cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
+        cliente.setRua(jtfendereco.getText());
+        cliente.setBairro(jtfbairro.getText());
+        cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
+        cliente.setComplemento(jtfcomplemento.getText());
+        dao.pesquisa(cliente);
+    }//GEN-LAST:event_btnpesquisarActionPerformed
 
     /**
      * @param args the command line arguments

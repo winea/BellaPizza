@@ -18,6 +18,7 @@ public class Cliente {
     private String bairro;
     private int numero;
     private String complemento;
+    private int pesquisa;
 
     public int getCodigo(){
         return codigo;
@@ -62,5 +63,11 @@ public class Cliente {
     }
     public void setComplemento(String complemento){
         this.complemento = complemento;
+    }
+    public int getPesquisa(){
+        return pesquisa;
+    }
+    public void setPesquisa(int pesquisa){
+        this.pesquisa = pesquisa;
     }
 }
