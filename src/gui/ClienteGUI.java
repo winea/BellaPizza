@@ -10,20 +10,19 @@ import javax.swing.JOptionPane;
 import modelo.Cliente;
 import factory.ConnectionFactory;
 import factory.TestaConexao;
-import factory.ConexaoBD;
-
 
 /**
  *
  * @author escol
  */
 public class ClienteGUI extends javax.swing.JFrame {
-
+    ConnectionFactory conexao = new ConnectionFactory();
     /**
      * Creates new form ClienteGUI
      */
     public ClienteGUI() {
         initComponents();
+        conexao.getConnection();
       
     }
 
@@ -281,8 +280,8 @@ public class ClienteGUI extends javax.swing.JFrame {
     private void btnpesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpesquisarActionPerformed
         // TODO add your handling code here:
         Cliente cliente = new Cliente();
-        cliente.setPesquisa(Integer.parseInt(jtfpesquisatel.getText()));
-        cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
+        int telefone = Integer.parseInt(jtfpesquisatel.getText());
+        //cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
         cliente.setNome(jtfnome.getText());
         cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
         cliente.setRua(jtfendereco.getText());
@@ -290,7 +289,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
         cliente.setComplemento(jtfcomplemento.getText());
         ClienteDAO dao = new ClienteDAO();
-        dao.pesquisa(cliente);
+        dao.pesquisa(cliente,telefone);
     }//GEN-LAST:event_btnpesquisarActionPerformed
 
     /**
