@@ -22,6 +22,7 @@ import modelo.Pizza;
 public class PedidoDAO {
     private Connection connection;
     Cliente cliente = new Cliente();
+    ConnectionFactory conex = new ConnectionFactory();
    
     public PedidoDAO(){
          this.connection = new ConnectionFactory().getConnection();
@@ -50,7 +51,7 @@ public class PedidoDAO {
     
     public List<Pizza> getNome() throws SQLException {
         List<Pizza> listapizzas = new ArrayList<Pizza>();
-        String sql = ("select * from cliente order by nome");
+        String sql = ("select * from pizza order by nome");
         PreparedStatement stmt = connection.prepareStatement(sql);
         Pizza pizza;
         ResultSet rs = stmt.executeQuery();
