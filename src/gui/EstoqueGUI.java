@@ -113,6 +113,11 @@ public class EstoqueGUI extends javax.swing.JFrame {
 
         jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair_1.png"))); // NOI18N
         jButtonExcluir.setToolTipText("Excluir");
+        jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonExcluir);
         jButtonExcluir.setBounds(230, 460, 30, 30);
 
@@ -123,6 +128,11 @@ public class EstoqueGUI extends javax.swing.JFrame {
 
         jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/novo.png"))); // NOI18N
         jButtonNovo.setToolTipText("Novo");
+        jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNovoActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonNovo);
         jButtonNovo.setBounds(450, 460, 30, 30);
 
@@ -214,6 +224,30 @@ public class EstoqueGUI extends javax.swing.JFrame {
         jTextFieldValor.setText("");       
         
     }//GEN-LAST:event_jButtonSalvarActionPerformed
+
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
+        String nome = jTextFieldPesquisar.getText();
+        
+        if ((jTextFieldPesquisar.getText().isEmpty())){
+            JOptionPane.showMessageDialog(null, "Preencha o nome para ser excluido");
+        }else{ 
+                EstoqueModelo model = new EstoqueModelo();
+                EstoqueDAO d = new EstoqueDAO();
+                d.remove(model, nome);
+                JOptionPane.showMessageDialog(null, "Produto " + jTextFieldPesquisar.getText().toUpperCase()+ "excluido com sucesso!");
+                
+               }
+        
+      jTextFieldPesquisar.setText("");
+                        
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
+
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+        jTextFieldNome.setEnabled(true);
+        jTextFieldQuantidade.setEnabled(true);
+        jTextFieldValor.setEnabled(true);
+        jButtonSalvar.setEnabled(true);
+    }//GEN-LAST:event_jButtonNovoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -280,7 +280,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCaixaActionPerformed
 
     private void jButtonEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstoqueActionPerformed
-        Estoque e = new Estoque();
+        EstoqueGUI e = new EstoqueGUI();
         e.setVisible(true);
     }//GEN-LAST:event_jButtonEstoqueActionPerformed
 

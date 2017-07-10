@@ -39,7 +39,7 @@ public class EstoqueDAO {
            
     }
     
-    public void remove(EstoqueModelo model){
+    public void remove(EstoqueModelo model, String nome){
             String sql = ("DELETE FROM ingrediente WHERE Nome = " +"'"+ model.getNome()+"'");
             System.out.println(sql);
             PreparedStatement stmt;
