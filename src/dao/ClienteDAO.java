@@ -60,28 +60,4 @@ public class ClienteDAO {
         }
     }
         
-    public Cliente pesquisa(Cliente cliente,int telefone){   
-        String sql = ("select from cliente WHERE Telefone like'%" + cliente.getPesquisa()+"%'");
-        
-        try{
-            PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1,cliente.getCodigo());
-            stmt.setString(2,cliente.getNome());
-            stmt.setInt(3,cliente.getTelefone());
-            stmt.setString(4,cliente.getRua());
-            stmt.setInt(5,cliente.getNumero());
-            stmt.setString(6,cliente.getBairro());
-            stmt.setString(7,cliente.getBairro());
-            stmt.executeUpdate();
-            stmt.close();
-            JOptionPane.showMessageDialog(null,"O telefone"+ telefone +" ja possui um cadastro");
-        }
-        catch(SQLException ex){
-             throw new RuntimeException(ex);
-        }catch(Exception i){
-          System.out.println("Erro ao pesquisar :"+ i.getMessage());
-        
-        }
-        return cliente;
-    }
   }
