@@ -11,7 +11,7 @@ public class EstoqueModelo {
     private String nome;
     private int codigo;
     private int quant;
-    private double preco;
+    private int preco;
     private String pesquisa;
     
     public String getNome() {
@@ -44,7 +44,7 @@ public class EstoqueModelo {
     }
 
     
-    public double getPreco() {
+    public int getPreco() {
         return preco;
     }
 

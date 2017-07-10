@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package dao;
-import factory.ConexaoBD;
 import modelo.Cliente;
 import java.sql.*;
 import java.sql.PreparedStatement;
@@ -16,6 +15,5 @@ import javax.swing.JOptionPane;
  * @author escol
  */
 public class PedidoDAO {
-    ConexaoBD conex = new ConexaoBD();
     Cliente cliente = new Cliente();
 }

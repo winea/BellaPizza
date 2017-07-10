@@ -70,7 +70,7 @@ public class EstoqueDAO {
            
     }
     
-    public EstoqueModelo buscar (EstoqueModelo model){
+    /*public EstoqueModelo buscar (EstoqueModelo model){
             public ResultSet rs;
             String sql = ("select * from ingrediente WHERE Nome like '%"+ model.getPesquisa()+"%'");
             PreparedStatement stmt;
@@ -88,7 +88,7 @@ public class EstoqueDAO {
         }
             return model;
     }
-           
+       */    
 }
     
 
