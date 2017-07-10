@@ -215,15 +215,17 @@ public class ClienteGUI extends javax.swing.JFrame {
     private void btnadicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadicionarActionPerformed
         // TODO add your handling code here:
         
-        cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
+        //cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
         cliente.setNome(jtfnome.getText());
         cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
         cliente.setRua(jtfendereco.getText());
         cliente.setBairro(jtfbairro.getText());
-        cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
+        //cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
+        String numero = jtfnumero.getText();
+        Integer numerocasa = Integer.parseInt(numero);
         cliente.setComplemento(jtfcomplemento.getText());
 
-        if ((jtfcodigo.getText().isEmpty())||(jtfnome.getText().isEmpty())||(jtftelefone.getText().isEmpty())||(jtfendereco.getText().isEmpty())||(jtfbairro.getText().isEmpty())||(jtfnumero.getText().isEmpty())||(jtfcomplemento.getText().isEmpty())) {
+        if ((jtfnome.getText().isEmpty())||(jtftelefone.getText().isEmpty())||(jtfendereco.getText().isEmpty())||(jtfbairro.getText().isEmpty())||(jtfnumero.getText().isEmpty())||(jtfcomplemento.getText().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Prencha os campos antes de prosseguir!");
         }
         else{
