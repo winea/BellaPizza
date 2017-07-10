@@ -103,6 +103,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jButtonPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pizzap.png"))); // NOI18N
         jButtonPedidos.setToolTipText("Pedidos Clientes");
+        jButtonPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPedidosActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonPedidos);
         jButtonPedidos.setBounds(520, 170, 90, 80);
 
@@ -283,6 +288,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         EstoqueGUI e = new EstoqueGUI();
         e.setVisible(true);
     }//GEN-LAST:event_jButtonEstoqueActionPerformed
+
+    private void jButtonPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPedidosActionPerformed
+        // TODO add your handling code here:
+        PedidoGUI pedido = new PedidoGUI();
+        pedido.setVisible(true);
+    }//GEN-LAST:event_jButtonPedidosActionPerformed
 
     /**
      * @param args the command line arguments

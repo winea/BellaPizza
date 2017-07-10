@@ -262,6 +262,7 @@ public class PedidoGUI extends javax.swing.JFrame {
         jtfcomplemento.setText("");
         qtdpizza.setText("");
         qtdbebida.setText("");
+        jtfvalor.setText("");
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
