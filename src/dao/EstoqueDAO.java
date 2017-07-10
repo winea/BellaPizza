@@ -40,7 +40,7 @@ public class EstoqueDAO {
     }
     
     public void remove(EstoqueModelo model, String nome){
-            String sql = ("DELETE FROM ingrediente WHERE Nome = " +"'"+ model.getNome()+"'");
+            String sql = ("DELETE FROM ingrediente WHERE Nome = " +"'"+ model.getPesquisa()+"'");
             System.out.println(sql);
             PreparedStatement stmt;
        try {
@@ -48,14 +48,16 @@ public class EstoqueDAO {
             System.out.println(stmt.toString());
             stmt.executeUpdate();
             stmt.close();
-            } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao remover produto\nErro:"+e);
+            } catch(SQLException ex){
+             throw new RuntimeException(ex);
+        }catch(Exception i){
+          System.out.println("Erro ao excluir :"+ i.getMessage());
         }
     }
     
     
     public void alterar (EstoqueModelo model){
-            String sql = ("update ingrediente WHERE Nome = " +"'"+ model.getNome()+"'");
+            String sql = ("update ingrediente WHERE Nome = " +"'"+ model.getPesquisa()+"'");
             PreparedStatement stmt;
         try {
             stmt = connection.prepareStatement(sql);
@@ -70,25 +72,26 @@ public class EstoqueDAO {
            
     }
     
-    /*public EstoqueModelo buscar (EstoqueModelo model){
-            public ResultSet rs;
-            String sql = ("select * from ingrediente WHERE Nome like '%"+ model.getPesquisa()+"%'");
+    public void buscar (EstoqueModelo model, String nome){
+            
+          /*  String sql = ("select * from ingrediente WHERE Nome like '%"+ model.getPesquisa()+"%'");
             PreparedStatement stmt;
         try {
             stmt = connection.prepareStatement(sql);
-            model.setCodigo(stmt.rs.getInt("Codigo_Ingrediente"));
-            model.setNome(stmt.rs.getString("Nome"));
-            model.setQuant(stmt.rs.getInt("Quantidade"));
-            model.setPreco(stmt.rs.getDouble("Preco_Unitario"));
+            model.setCodigo(stmt.getTxt("Codigo_Ingrediente"));
+            model.setNome(stmt.get("Nome"));
+            model.setQuant(stmt.get("Quantidade"));
+            model.setPreco(stmt.getInt("Preco_Unitario"));
             stmt.execute();
             stmt.close();
             
             } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null, "Nao Encontrado\nErro:"+ex);
         }
-            return model;
+            
+    */
+          
     }
-       */    
-}
     
-
+    
+}

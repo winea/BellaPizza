@@ -55,7 +55,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         btneditar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Cliente");
 
         jLabel1.setText("Codigo:");
