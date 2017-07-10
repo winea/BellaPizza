@@ -7,6 +7,8 @@ package gui;
 
 import dao.EstoqueDAO;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import modelo.EstoqueModelo;
 
 /**
@@ -20,8 +22,24 @@ public class EstoqueGUI extends javax.swing.JFrame {
      */
     public EstoqueGUI() {
         initComponents();
+        //DefaultTableModel modelo = (defaultTableModel).jTableEstoque.getModel();
+        //jTableEstoque.setRowSorter(new TableRowSorter(modelo));
     }
 
+   /* public void readJTable(){
+        ArrayList dados = new ArrayList();
+        EstoqueDAO dao = new EstoqueDAO();
+        
+        for (EstoqueModelo e: dao.read()){
+            model.addRow(new Object)
+            
+                    
+       }            /*
+        ConsultasDAO consulta = new ConsultasDAO();
+        List<Cliente> clientes = consulta.getClientes();
+        for (Cliente nomeClienteAtual : clientes) {
+            comboClientes.addItem(nomeClienteAtual.getNome());*/
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +48,11 @@ public class EstoqueGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
+        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("bellapizzabd?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
+        ingredienteQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT i FROM Ingrediente i");
+        ingredienteList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : ingredienteQuery.getResultList();
         jLabel2Estoque = new javax.swing.JLabel();
         jLabelCodigo = new javax.swing.JLabel();
         jLabelNome = new javax.swing.JLabel();
@@ -162,43 +184,25 @@ public class EstoqueGUI extends javax.swing.JFrame {
         getContentPane().add(jButtonSalvar);
         jButtonSalvar.setBounds(570, 460, 30, 30);
 
-        jTableEstoque.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Codigo", "Nome", "Quantidade", "Preço"
-            }
-        ));
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, ingredienteList, jTableEstoque);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codigoIngrediente}"));
+        columnBinding.setColumnName("Codigo Ingrediente");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nome}"));
+        columnBinding.setColumnName("Nome");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${quantidade}"));
+        columnBinding.setColumnName("Quantidade");
+        columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${precoUnitario}"));
+        columnBinding.setColumnName("Preco Unitario");
+        columnBinding.setColumnClass(java.math.BigDecimal.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
         jScrollPane1.setViewportView(jTableEstoque);
+        if (jTableEstoque.getColumnModel().getColumnCount() > 0) {
+            jTableEstoque.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(70, 290, 600, 140);
@@ -208,6 +212,8 @@ public class EstoqueGUI extends javax.swing.JFrame {
         jLabelFundo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jLabelFundo);
         jLabelFundo.setBounds(30, 60, 710, 450);
+
+        bindingGroup.bind();
 
         setSize(new java.awt.Dimension(801, 577));
         setLocationRelativeTo(null);
@@ -287,6 +293,7 @@ public class EstoqueGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
+  
     /**
      * @param args the command line arguments
      */
@@ -324,6 +331,9 @@ public class EstoqueGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.persistence.EntityManager entityManager;
+    private java.util.List<gui.Ingrediente> ingredienteList;
+    private javax.persistence.Query ingredienteQuery;
     private javax.swing.JButton jButtonAlterar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonExcluir;
@@ -344,5 +354,6 @@ public class EstoqueGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldPesquisar;
     private javax.swing.JTextField jTextFieldQuantidade;
     private javax.swing.JTextField jTextFieldValor;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

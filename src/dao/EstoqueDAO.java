@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import modelo.EstoqueModelo;
 
@@ -95,5 +97,30 @@ public class EstoqueDAO {
           
     }
     
+    public List<EstoqueModelo> read(){
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            List<EstoqueModelo> estoque = new ArrayList<EstoqueModelo>();
+            
+                 try {
+            stmt = connection.prepareStatement("SELECT *FROM ingrediente");
+            rs = stmt.executeQuery();
+            
+                while (rs.next()){
+                    EstoqueModelo model = new EstoqueModelo();    
+                    model.setCodigo(rs.getInt("Codigo_Ingrediente"));
+                    model.setNome(rs.getString("Nome"));
+                    model.setQuant(rs.getInt("Quantidade"));
+                    model.setPreco(rs.getInt("Preco_Unitario"));
+                    estoque.add(model);
+                    stmt.close();
+                }
+            } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null, "Erro Lista\nErro:"+ex);
+        }
+                 
+                 return estoque;
+    }
     
 }
