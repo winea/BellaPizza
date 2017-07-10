@@ -291,6 +291,8 @@ public class PedidoGUI extends javax.swing.JFrame {
         jtfcomplemento.setText(model.getComplemento());
         jtftelefone.setText(String.valueOf(model.getTelefone()));
         
+        //fazendo botao pesquisar
+        
     }//GEN-LAST:event_jbnpesquisarActionPerformed
 
     /**
