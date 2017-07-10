@@ -18,15 +18,13 @@ import factory.ConexaoBD;
  * @author escol
  */
 public class ClienteGUI extends javax.swing.JFrame {
-    Cliente cliente = new Cliente();
-    ClienteDAO dao = new ClienteDAO();
-    ConexaoBD conex = new ConexaoBD();
+
     /**
      * Creates new form ClienteGUI
      */
     public ClienteGUI() {
         initComponents();
-        ConnectionFactory conex = new ConnectionFactory();
+      
     }
 
     /**
@@ -214,13 +212,11 @@ public class ClienteGUI extends javax.swing.JFrame {
 
     private void btnadicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadicionarActionPerformed
         // TODO add your handling code here:
-        
-        //cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
+        Cliente cliente = new Cliente();
         cliente.setNome(jtfnome.getText());
         cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
         cliente.setRua(jtfendereco.getText());
         cliente.setBairro(jtfbairro.getText());
-        //cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
         String numero = jtfnumero.getText();
         Integer numerocasa = Integer.parseInt(numero);
         cliente.setComplemento(jtfcomplemento.getText());
@@ -230,8 +226,18 @@ public class ClienteGUI extends javax.swing.JFrame {
         }
         else{
             
-            dao.cadastraCliente(cliente);    
+            ClienteDAO dao = new ClienteDAO();
+            dao.cadastraCliente(cliente); 
+            JOptionPane.showMessageDialog(null,"Cadastro do cliente foi realizado com sucesso");
         }
+        jtfcodigo.setText("");
+        jtfnome.setText("");
+        jtftelefone.setText("");
+        jtfendereco.setText("");
+        jtfbairro.setText("");
+        jtfnumero.setText("");
+        jtfcomplemento.setText("");
+        jtfpesquisatel.setText("");
         
         
     }//GEN-LAST:event_btnadicionarActionPerformed
@@ -254,19 +260,15 @@ public class ClienteGUI extends javax.swing.JFrame {
 
     private void btnremoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnremoverActionPerformed
         // TODO add your handling code here:
+        int telefone = Integer.parseInt(jtftelefone.getText());
         int resposta =0;
         resposta = JOptionPane.showConfirmDialog(null,"Deseja realmente deletar os dados?");
         if(resposta==JOptionPane.YES_OPTION){
-            
-             cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
-             cliente.setNome(jtfnome.getText());
-             cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
-             cliente.setRua(jtfendereco.getText());
-             cliente.setBairro(jtfbairro.getText());
-             cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
-             cliente.setComplemento(jtfcomplemento.getText());
-             dao.remove(cliente);
-            
+            Cliente cliente = new Cliente();
+            ClienteDAO dao = new ClienteDAO();
+            dao.remove(cliente,telefone);
+            JOptionPane.showMessageDialog(null, "Cliente com o telefone" + jtftelefone.getText().toUpperCase() + " foi excluido com sucesso! ");
+            jtftelefone.setText(""); 
         }
         
     }//GEN-LAST:event_btnremoverActionPerformed
@@ -278,6 +280,7 @@ public class ClienteGUI extends javax.swing.JFrame {
 
     private void btnpesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpesquisarActionPerformed
         // TODO add your handling code here:
+        Cliente cliente = new Cliente();
         cliente.setPesquisa(Integer.parseInt(jtfpesquisatel.getText()));
         cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
         cliente.setNome(jtfnome.getText());
@@ -286,6 +289,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         cliente.setBairro(jtfbairro.getText());
         cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
         cliente.setComplemento(jtfcomplemento.getText());
+        ClienteDAO dao = new ClienteDAO();
         dao.pesquisa(cliente);
     }//GEN-LAST:event_btnpesquisarActionPerformed
 
