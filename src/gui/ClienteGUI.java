@@ -5,8 +5,12 @@
  */
 package gui;
 import dao.ClienteDAO;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
+import factory.ConnectionFactory;
+import factory.TestaConexao;
+import factory.ConexaoBD;
 
 
 /**
@@ -14,12 +18,15 @@ import modelo.Cliente;
  * @author escol
  */
 public class ClienteGUI extends javax.swing.JFrame {
-
+    Cliente cliente = new Cliente();
+    ClienteDAO dao = new ClienteDAO();
+    ConexaoBD conex = new ConexaoBD();
     /**
      * Creates new form ClienteGUI
      */
     public ClienteGUI() {
         initComponents();
+        ConnectionFactory conex = new ConnectionFactory();
     }
 
     /**
@@ -53,6 +60,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         jtfpesquisatel = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cadastro Cliente");
 
         jLabel1.setText("Codigo:");
 
@@ -76,6 +84,11 @@ public class ClienteGUI extends javax.swing.JFrame {
         jLabel7.setText("Numero:");
 
         btnremover.setText("Remover");
+        btnremover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnremoverActionPerformed(evt);
+            }
+        });
 
         btnlimpar.setText("Limpar");
         btnlimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -85,18 +98,33 @@ public class ClienteGUI extends javax.swing.JFrame {
         });
 
         btneditar.setText("Editar");
+        btneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditarActionPerformed(evt);
+            }
+        });
 
         btnpesquisar.setText("Pesquisar");
+        btnpesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpesquisarActionPerformed(evt);
+            }
+        });
 
         jtfpesquisatel.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfpesquisatel.setText("Telefone");
+        jtfpesquisatel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfpesquisatelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,11 +163,11 @@ public class ClienteGUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jtfnumero))
+                                .addComponent(jtfnumero, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(41, 41, 41)
                                 .addComponent(btneditar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,22 +214,21 @@ public class ClienteGUI extends javax.swing.JFrame {
 
     private void btnadicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadicionarActionPerformed
         // TODO add your handling code here:
-        Cliente cliente = new Cliente();
-        cliente.setCodigo(jtfcodigo.getText());
+        
+        cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
         cliente.setNome(jtfnome.getText());
-        cliente.setTelefone(jtftelefone.getText());
+        cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
         cliente.setRua(jtfendereco.getText());
         cliente.setBairro(jtfbairro.getText());
-        cliente.setNumero(jtfnumero.getText());
+        cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
         cliente.setComplemento(jtfcomplemento.getText());
 
         if ((jtfcodigo.getText().isEmpty())||(jtfnome.getText().isEmpty())||(jtftelefone.getText().isEmpty())||(jtfendereco.getText().isEmpty())||(jtfbairro.getText().isEmpty())||(jtfnumero.getText().isEmpty())||(jtfcomplemento.getText().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Prencha os campos antes de prosseguir!");
         }
         else{
-            ClienteDAO clienteDao = new ClienteDAO();
-            clienteDao.cadastraCliente(cliente);
-            JOptionPane.showMessageDialog(null,"Cadastro do cliente foi realizado com sucesso");
+            
+            dao.cadastraCliente(cliente);    
         }
         
         
@@ -218,6 +245,47 @@ public class ClienteGUI extends javax.swing.JFrame {
         jtfcomplemento.setText("");
         jtfpesquisatel.setText("");
     }//GEN-LAST:event_btnlimparActionPerformed
+
+    private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btneditarActionPerformed
+
+    private void btnremoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnremoverActionPerformed
+        // TODO add your handling code here:
+        int resposta =0;
+        resposta = JOptionPane.showConfirmDialog(null,"Deseja realmente deletar os dados?");
+        if(resposta==JOptionPane.YES_OPTION){
+            
+             cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
+             cliente.setNome(jtfnome.getText());
+             cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
+             cliente.setRua(jtfendereco.getText());
+             cliente.setBairro(jtfbairro.getText());
+             cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
+             cliente.setComplemento(jtfcomplemento.getText());
+             dao.remove(cliente);
+            
+        }
+        
+    }//GEN-LAST:event_btnremoverActionPerformed
+
+    private void jtfpesquisatelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfpesquisatelActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jtfpesquisatelActionPerformed
+
+    private void btnpesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpesquisarActionPerformed
+        // TODO add your handling code here:
+        cliente.setPesquisa(Integer.parseInt(jtfpesquisatel.getText()));
+        cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
+        cliente.setNome(jtfnome.getText());
+        cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
+        cliente.setRua(jtfendereco.getText());
+        cliente.setBairro(jtfbairro.getText());
+        cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
+        cliente.setComplemento(jtfcomplemento.getText());
+        dao.pesquisa(cliente);
+    }//GEN-LAST:event_btnpesquisarActionPerformed
 
     /**
      * @param args the command line arguments

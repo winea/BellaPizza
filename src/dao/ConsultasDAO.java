@@ -30,10 +30,10 @@ public class ConsultasDAO {
         while (rs.next()) {
             cliente = new Cliente();
             cliente.setNome(rs.getString("nome"));
-            cliente.setTelefone(rs.getString("telefone"));
+            cliente.setTelefone(rs.getInt("telefone"));
             cliente.setRua(rs.getString("rua"));
             cliente.setBairro(rs.getString("bairro"));
-            cliente.setNumero(rs.getString("numero"));
+            cliente.setNumero(rs.getInt("numero"));
             cliente.setComplemento(rs.getString("complemento"));
             listaClientes.add(cliente);
         }

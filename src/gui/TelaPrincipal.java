@@ -1,13 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gui;
+
 
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import factory.ConexaoBD;
+
 
 
 /**
@@ -16,10 +16,11 @@ import java.util.logging.Logger;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
  
+    ConexaoBD conecta = new ConexaoBD();
     
     public TelaPrincipal() {
         initComponents();
-       
+       conecta.conexao();
     }
 
     /**
@@ -227,10 +228,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonFecharBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharBemVindoActionPerformed
-      System.exit(0);
+        conecta.desconecta();
+        System.exit(0);
     }//GEN-LAST:event_jButtonFecharBemVindoActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
+        conecta.desconecta();
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSairActionPerformed
 
@@ -263,7 +266,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonControleActionPerformed
 
     private void jButtonCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCaixaActionPerformed
-        // TODO add your handling code here:
+         TelaFluxodeCaixa f = new TelaFluxodeCaixa();
+        f.setVisible(true);
     }//GEN-LAST:event_jButtonCaixaActionPerformed
 
     private void jButtonEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstoqueActionPerformed

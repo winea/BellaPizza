@@ -65,9 +65,9 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(Senha);
         Senha.setBounds(140, 100, 50, 20);
         getContentPane().add(jTextFieldUsuario);
-        jTextFieldUsuario.setBounds(210, 60, 180, 20);
+        jTextFieldUsuario.setBounds(210, 60, 180, 30);
         getContentPane().add(jTextFieldSenha);
-        jTextFieldSenha.setBounds(210, 100, 180, 20);
+        jTextFieldSenha.setBounds(210, 100, 180, 30);
 
         jButtonAcessar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonAcessar.setText("Acessar");

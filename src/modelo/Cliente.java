@@ -11,18 +11,19 @@ package modelo;
  */
 public class Cliente {
     
-    private String codigo;
+    private int codigo;
     private String nome;
-    private String telefone;
+    private int telefone;
     private String rua;
     private String bairro;
-    private String numero;
+    private int numero;
     private String complemento;
+    private int pesquisa;
 
-    public String getCodigo(){
+    public int getCodigo(){
         return codigo;
     }
-    public void setCodigo(String codigo){
+    public void setCodigo(int codigo){
         this.codigo = codigo;
     }
 
@@ -33,10 +34,10 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getTelefone(){
+    public int getTelefone(){
         return telefone;
     }
-    public void setTelefone(String telefone){
+    public void setTelefone(int telefone){
         this.telefone = telefone;
     }
     public String getRua(){
@@ -45,10 +46,10 @@ public class Cliente {
     public void setRua(String rua){
         this.rua = rua;
     }
-    public String getNumero(){
+    public int getNumero(){
         return numero;
     }
-    public void setNumero(String numero){
+    public void setNumero(int numero){
         this.numero = numero;
     }
     public String getBairro(){
@@ -62,5 +63,11 @@ public class Cliente {
     }
     public void setComplemento(String complemento){
         this.complemento = complemento;
+    }
+    public int getPesquisa(){
+        return pesquisa;
+    }
+    public void setPesquisa(int pesquisa){
+        this.pesquisa = pesquisa;
     }
 }
