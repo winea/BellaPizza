@@ -8,29 +8,19 @@ package gui;
 import modelo.Cliente;
 import dao.ClienteDAO;
 import dao.PedidoDAO;
-import factory.ConnectionFactory;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-import javax.swing.JOptionPane;
 import modelo.Pedido;
-import modelo.Pizza;
 
 /**
  *
  * @author escol
  */
 public class PedidoGUI extends javax.swing.JFrame {
-    private Connection connection;
-    ConnectionFactory conexao = new ConnectionFactory();
+
     /**
      * Creates new form PedidoGUI
      */
     public PedidoGUI() {
         initComponents();
-        this.connection = new ConnectionFactory().getConnection();
     }
 
     /**
@@ -272,10 +262,7 @@ public class PedidoGUI extends javax.swing.JFrame {
     private void jtfbairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfbairroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfbairroActionPerformed
-    public void carregeaComboPizza() throws SQLException {
-      
-        
-    }
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         jtfnome.setText("");

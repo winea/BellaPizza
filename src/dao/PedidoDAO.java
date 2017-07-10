@@ -49,7 +49,21 @@ public class PedidoDAO {
         return cliente;
     }
     
-    
+    public List<Pizza> getNome() throws SQLException {
+        List<Pizza> listapizzas = new ArrayList<Pizza>();
+        String sql = ("select * from pizza order by nome");
+        PreparedStatement stmt = connection.prepareStatement(sql);
+        Pizza pizza;
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            pizza = new Pizza();
+            pizza.setNome(rs.getString("Nome"));
+            pizza.setCodigo(rs.getInt("Codigo_Pizza"));
+            
+            listapizzas.add(pizza);
+        }
+        return listapizzas;   
+    }
     
     public void Finalizar_Salvar(){
         
