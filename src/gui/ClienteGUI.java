@@ -282,14 +282,15 @@ public class ClienteGUI extends javax.swing.JFrame {
         Cliente cliente = new Cliente();
         int telefone = Integer.parseInt(jtfpesquisatel.getText());
         //cliente.setCodigo(Integer.parseInt(jtfcodigo.getText()));
+        ClienteDAO dao = new ClienteDAO();
+        dao.pesquisa(cliente,telefone);
         cliente.setNome(jtfnome.getText());
         cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
         cliente.setRua(jtfendereco.getText());
         cliente.setBairro(jtfbairro.getText());
         cliente.setNumero(Integer.parseInt(jtfnumero.getText()));
         cliente.setComplemento(jtfcomplemento.getText());
-        ClienteDAO dao = new ClienteDAO();
-        dao.pesquisa(cliente,telefone);
+        
     }//GEN-LAST:event_btnpesquisarActionPerformed
 
     /**

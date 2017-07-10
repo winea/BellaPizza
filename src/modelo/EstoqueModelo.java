@@ -12,7 +12,7 @@ public class EstoqueModelo {
     private int codigo;
     private int quant;
     private double preco;
-     private String pesquisa;
+    private String pesquisa;
     
     public String getNome() {
         return nome;

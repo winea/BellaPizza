@@ -60,12 +60,10 @@ public class ClienteDAO {
         }
     }
         
-    public Cliente pesquisa(Cliente cliente,int telefone){
-        ResultSet rs;    
+    public Cliente pesquisa(Cliente cliente,int telefone){   
         String sql = ("select from cliente WHERE Telefone like'%" + cliente.getPesquisa()+"%'");
         
         try{
-            
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1,cliente.getCodigo());
             stmt.setString(2,cliente.getNome());
