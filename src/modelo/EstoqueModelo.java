@@ -6,11 +6,13 @@ package modelo;
  * @author Winy
  */
 public class EstoqueModelo {
+
+   
     private String nome;
     private int codigo;
     private int quant;
-    private int preco;
-    
+    private double preco;
+     private String pesquisa;
     
     public String getNome() {
         return nome;
@@ -42,7 +44,7 @@ public class EstoqueModelo {
     }
 
     
-    public int getPreco() {
+    public double getPreco() {
         return preco;
     }
 
@@ -50,5 +52,13 @@ public class EstoqueModelo {
     public void setPreco(int preco) {
         this.preco = preco;
     }
+     
+    public String getPesquisa() {
+        return pesquisa;
+    }
+
     
+    public void setPesquisa(String pesquisa) {
+        this.pesquisa = pesquisa;
+    }
 }

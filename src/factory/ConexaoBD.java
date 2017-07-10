@@ -12,23 +12,35 @@ import javax.swing.JOptionPane;
 public class ConexaoBD {
     public Statement stm; //pesquisa BD
     public ResultSet rs; //Resultado pesquisa
-    private String driver = "com.mysql.jdbc.Driver"; //identifica BD
-    private String caminho = "jdbc:mysql://localhost:3306/bellapizza";
-    private String usuario = "root";
-    private String senha = "3366";
+   // private String driver = "com.mysql.jdbc.Driver"; //identifica BD
+    //private String caminho = "jdbc:mysql://localhost:3306/bellapizza";
+    //private String usuario = "root";
+    //private String senha = "3366";
     public Connection con;
     
     public void conexao (){
         
         try {
-          System.setProperty ("jdbc.Drivers", driver);
+          /*System.setProperty ("jdbc.Drivers", driver);
             con = DriverManager.getConnection(caminho, usuario, senha);
+            Class.forName("com.mysql.jdbc.Driver");*/
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bellapizza", "root", "3366");
+  
             JOptionPane.showMessageDialog(null, "Conexao Efetuada com Sucesso!!");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao se conectar com o Banco de Dados!\n"+ex.getMessage());
             }
         
         }
+    
+    public void executaSql(String sql){
+        try {
+            stm = con.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
+            rs = stm.executeQuery(sql);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro executaSql!\n"+ex.getMessage());
+        }      
+    }
     
     public void desconecta (){
         
