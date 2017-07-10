@@ -50,9 +50,18 @@ public class EstoqueGUI extends javax.swing.JFrame {
     private void initComponents() {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("bellapizzabd?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
-        ingredienteQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT i FROM Ingrediente i");
         ingredienteList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : ingredienteQuery.getResultList();
+        entityManager0 = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("bellapizzabd?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
+        bebidaQuery = java.beans.Beans.isDesignTime() ? null : entityManager0.createQuery("SELECT b FROM Bebida b");
+        bebidaList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : bebidaQuery.getResultList();
+        ingredienteQuery = java.beans.Beans.isDesignTime() ? null : entityManager0.createQuery("SELECT i FROM Ingrediente i");
+        ingredienteList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : ingredienteQuery.getResultList();
+        ingredienteQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager0.createQuery("SELECT i FROM Ingrediente i");
+        ingredienteList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : ingredienteQuery1.getResultList();
+        ingredienteQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager0.createQuery("SELECT i FROM Ingrediente i");
+        ingredienteList3 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : ingredienteQuery2.getResultList();
+        ingredienteQuery3 = java.beans.Beans.isDesignTime() ? null : entityManager0.createQuery("SELECT i FROM Ingrediente i");
+        ingredienteList4 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : ingredienteQuery3.getResultList();
         jLabel2Estoque = new javax.swing.JLabel();
         jLabelCodigo = new javax.swing.JLabel();
         jLabelNome = new javax.swing.JLabel();
@@ -184,7 +193,7 @@ public class EstoqueGUI extends javax.swing.JFrame {
         getContentPane().add(jButtonSalvar);
         jButtonSalvar.setBounds(570, 460, 30, 30);
 
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, ingredienteList, jTableEstoque);
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, ingredienteList4, jTableEstoque);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codigoIngrediente}"));
         columnBinding.setColumnName("Codigo Ingrediente");
         columnBinding.setColumnClass(Integer.class);
@@ -200,9 +209,6 @@ public class EstoqueGUI extends javax.swing.JFrame {
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
         jScrollPane1.setViewportView(jTableEstoque);
-        if (jTableEstoque.getColumnModel().getColumnCount() > 0) {
-            jTableEstoque.getColumnModel().getColumn(3).setResizable(false);
-        }
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(70, 290, 600, 140);
@@ -331,9 +337,18 @@ public class EstoqueGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.persistence.EntityManager entityManager;
+    private java.util.List<gui.Bebida> bebidaList;
+    private javax.persistence.Query bebidaQuery;
+    private javax.persistence.EntityManager entityManager0;
     private java.util.List<gui.Ingrediente> ingredienteList;
+    private java.util.List<gui.Ingrediente> ingredienteList1;
+    private java.util.List<gui.Ingrediente> ingredienteList2;
+    private java.util.List<gui.Ingrediente> ingredienteList3;
+    private java.util.List<gui.Ingrediente> ingredienteList4;
     private javax.persistence.Query ingredienteQuery;
+    private javax.persistence.Query ingredienteQuery1;
+    private javax.persistence.Query ingredienteQuery2;
+    private javax.persistence.Query ingredienteQuery3;
     private javax.swing.JButton jButtonAlterar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonExcluir;

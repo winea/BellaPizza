@@ -23,7 +23,7 @@ public class ConnectionFactory {
     public Connection getConnection(){
 	try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bellapizzabd", "root", "3366");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bellapizzabd", "root", "seliormu6");
             return con;
         } catch (SQLException ex1) {
             JOptionPane.showMessageDialog(null, "Erro Comando SQL " + ex1.getMessage());
