@@ -69,12 +69,8 @@ public class EstoqueGUI extends javax.swing.JFrame {
         jLabelNome.setText("Nome:");
         getContentPane().add(jLabelNome);
         jLabelNome.setBounds(250, 80, 50, 17);
-
-        jTextFieldCodigo.setEnabled(false);
         getContentPane().add(jTextFieldCodigo);
         jTextFieldCodigo.setBounds(70, 110, 160, 30);
-
-        jTextFieldNome.setEnabled(false);
         getContentPane().add(jTextFieldNome);
         jTextFieldNome.setBounds(250, 110, 300, 30);
 
@@ -83,7 +79,6 @@ public class EstoqueGUI extends javax.swing.JFrame {
         getContentPane().add(jLabelValor);
         jLabelValor.setBounds(570, 80, 70, 14);
 
-        jTextFieldValor.setEnabled(false);
         jTextFieldValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldValorActionPerformed(evt);
@@ -96,8 +91,6 @@ public class EstoqueGUI extends javax.swing.JFrame {
         jLabelQuantidade.setText("Quantidade (g):");
         getContentPane().add(jLabelQuantidade);
         jLabelQuantidade.setBounds(70, 150, 100, 17);
-
-        jTextFieldQuantidade.setEnabled(false);
         getContentPane().add(jTextFieldQuantidade);
         jTextFieldQuantidade.setBounds(70, 180, 160, 30);
 
@@ -110,23 +103,16 @@ public class EstoqueGUI extends javax.swing.JFrame {
         jTextFieldPesquisar.setBounds(70, 230, 470, 30);
 
         jButtonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar.png"))); // NOI18N
-        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPesquisarActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButtonPesquisar);
         jButtonPesquisar.setBounds(590, 230, 40, 30);
 
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancel.png"))); // NOI18N
         jButtonCancelar.setToolTipText("Cancelar");
-        jButtonCancelar.setEnabled(false);
         getContentPane().add(jButtonCancelar);
         jButtonCancelar.setBounds(110, 460, 40, 30);
 
         jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair_1.png"))); // NOI18N
         jButtonExcluir.setToolTipText("Excluir");
-        jButtonExcluir.setEnabled(false);
         jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExcluirActionPerformed(evt);
@@ -137,7 +123,6 @@ public class EstoqueGUI extends javax.swing.JFrame {
 
         jButtonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alterar.png"))); // NOI18N
         jButtonAlterar.setToolTipText("Alterar");
-        jButtonAlterar.setEnabled(false);
         getContentPane().add(jButtonAlterar);
         jButtonAlterar.setBounds(340, 460, 30, 30);
 
@@ -153,7 +138,6 @@ public class EstoqueGUI extends javax.swing.JFrame {
 
         jButtonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/salvar.png"))); // NOI18N
         jButtonSalvar.setToolTipText("Salvar");
-        jButtonSalvar.setEnabled(false);
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalvarActionPerformed(evt);
@@ -264,28 +248,6 @@ public class EstoqueGUI extends javax.swing.JFrame {
         jTextFieldValor.setEnabled(true);
         jButtonSalvar.setEnabled(true);
     }//GEN-LAST:event_jButtonNovoActionPerformed
-
-    private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
-         
-         String nome = jTextFieldPesquisar.getText();
-         
-         if ((jTextFieldPesquisar.getText().isEmpty())){
-            JOptionPane.showMessageDialog(null, "Preencha o nome para buscar");
-        }else{ 
-                EstoqueModelo model = new EstoqueModelo();
-                EstoqueDAO d = new EstoqueDAO();
-                d.buscar(model, nome);
-                
-                jTextFieldNome.setText(model.getNome());
-                jTextFieldCodigo.setText(String.valueOf(model.getCodigo()));
-                jTextFieldQuantidade.setText(String.valueOf(model.getQuant()));
-                jTextFieldValor.setText(String.valueOf(model.getPreco())); 
-               }
-        jButtonAlterar.setEnabled(true);
-        jButtonExcluir.setEnabled(true);
-       
-        
-    }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
