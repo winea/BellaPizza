@@ -202,7 +202,15 @@ public class Estoque extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldPesquisarActionPerformed
 
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
-      
+        mod.setPesquisa(jTextFieldPesquisar.getText());
+        EstoqueModelo modelo = control.buscar(mod);
+        jTextFieldCodigo.setText(String.valueOf(modelo.getCodigo()));
+        jTextFieldNome.setText(modelo.getNome());
+        jTextFieldQuantidade.setText(String.valueOf(modelo.getQuant()));
+        jTextFieldValor.setText(String.valueOf(modelo.getPreco()));
+        jButtonAlterar.setEnabled(true);
+        jButtonExcluir.setEnabled(true);
+        
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
@@ -220,7 +228,7 @@ public class Estoque extends javax.swing.JFrame {
         jTextFieldNome.setText("");
         jTextFieldCodigo.setText("");
         jTextFieldQuantidade.setText("");
-        jTextFieldQuantidade.setText("");
+        jTextFieldValor.setText("");
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jTextFieldQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeActionPerformed

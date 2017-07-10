@@ -2,11 +2,12 @@
 package gui;
 
 
+import factory.ConnectionFactory;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import factory.ConexaoBD;
+import javax.swing.JOptionPane;
 
 
 
@@ -16,11 +17,11 @@ import factory.ConexaoBD;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
  
-    ConexaoBD conecta = new ConexaoBD();
+     Connection conexao = new ConnectionFactory().getConnection();
     
     public TelaPrincipal() {
         initComponents();
-       conecta.conexao();
+      
     }
 
     /**
@@ -228,12 +229,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonFecharBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharBemVindoActionPerformed
-        conecta.desconecta();
+         try {
+             conexao.close();
+         } catch (SQLException ex) {
+          JOptionPane.showMessageDialog(null, "Erro Banco de Dados\nErro:"+ex);   
+         }
         System.exit(0);
     }//GEN-LAST:event_jButtonFecharBemVindoActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
-        conecta.desconecta();
+         try {
+             conexao.close();
+         } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null, "Erro Banco de Dados\nErro:"+ex);   
+         }
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSairActionPerformed
 
