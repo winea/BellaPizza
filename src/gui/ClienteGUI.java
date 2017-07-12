@@ -52,8 +52,8 @@ public class ClienteGUI extends javax.swing.JFrame {
         jtfnumero = new javax.swing.JTextField();
         btnremover = new javax.swing.JButton();
         btnlimpar = new javax.swing.JButton();
-        btneditar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Cliente");
@@ -66,6 +66,8 @@ public class ClienteGUI extends javax.swing.JFrame {
                 btnadicionarActionPerformed(evt);
             }
         });
+
+        jtfcodigo.setEnabled(false);
 
         jLabel2.setText("Nome:");
 
@@ -93,15 +95,10 @@ public class ClienteGUI extends javax.swing.JFrame {
             }
         });
 
-        btneditar.setText("Editar");
-        btneditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btneditarActionPerformed(evt);
-            }
-        });
-
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Cadastro de Cliente -Bella Pizza");
+
+        jLabel9.setText("Insira um telefone existente para remover um cliente");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,8 +122,11 @@ public class ClienteGUI extends javax.swing.JFrame {
                                 .addGap(47, 47, 47)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jtfbairro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfendereco, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jtfcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(54, 54, 54)
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jtfendereco)
                                     .addComponent(jtftelefone)
                                     .addComponent(jtfnome))
                                 .addGap(0, 0, Short.MAX_VALUE))
@@ -145,13 +145,8 @@ public class ClienteGUI extends javax.swing.JFrame {
                                         .addComponent(jtfcomplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(51, 51, 51)
                                         .addComponent(jLabel7)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jtfnumero, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(41, 41, 41)
-                                        .addComponent(btneditar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(18, 18, 18)
+                                .addComponent(jtfnumero)))
                         .addGap(50, 50, 50))))
         );
         layout.setVerticalGroup(
@@ -162,7 +157,8 @@ public class ClienteGUI extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jtfcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -189,8 +185,7 @@ public class ClienteGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnadicionar)
                     .addComponent(btnremover)
-                    .addComponent(btnlimpar)
-                    .addComponent(btneditar))
+                    .addComponent(btnlimpar))
                 .addGap(61, 61, 61))
         );
 
@@ -239,10 +234,6 @@ public class ClienteGUI extends javax.swing.JFrame {
         jtfnumero.setText("");
         jtfcomplemento.setText("");
     }//GEN-LAST:event_btnlimparActionPerformed
-
-    private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btneditarActionPerformed
 
     private void btnremoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnremoverActionPerformed
         // TODO add your handling code here:
@@ -296,7 +287,6 @@ public class ClienteGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnadicionar;
-    private javax.swing.JButton btneditar;
     private javax.swing.JButton btnlimpar;
     private javax.swing.JButton btnremover;
     private javax.swing.JLabel jLabel1;
@@ -307,6 +297,7 @@ public class ClienteGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jtfbairro;
     private javax.swing.JTextField jtfcodigo;
     private javax.swing.JTextField jtfcomplemento;

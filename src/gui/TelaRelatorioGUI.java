@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import modelo.Cliente;
+import modelo.Pizza;
 
 
 /**
@@ -32,13 +33,22 @@ public class TelaRelatorioGUI extends javax.swing.JFrame {
      */
     public TelaRelatorioGUI() throws SQLException {
         initComponents();
+         setVisible(true);
     }
 
-    public void carregeaComboClientes() throws SQLException {
+    public void carregaComboClientes() throws SQLException {
         ConsultasDAO consulta = new ConsultasDAO();
         List<Cliente> clientes = consulta.getClientes();
         for (Cliente nomeClienteAtual : clientes) {
             comboClientes.addItem(nomeClienteAtual.getNome());
+        }
+    }
+    
+        public void carregeaComboPizza() throws SQLException {
+        ConsultasDAO consulta = new ConsultasDAO();
+        List<Pizza> pizzas = consulta.getPizzas();
+        for (Pizza pizzaAtual : pizzas) {
+            comboPizza.addItem(pizzaAtual.getNomePizza());       
         }
     }
 
@@ -60,7 +70,10 @@ public class TelaRelatorioGUI extends javax.swing.JFrame {
         btnLimparTableCli = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        comboProdutos = new javax.swing.JComboBox<>();
+        comboPizza = new javax.swing.JComboBox<>();
+        btnBuscaProdutos = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablePizzas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,15 +153,38 @@ public class TelaRelatorioGUI extends javax.swing.JFrame {
                     .addComponent(btnLimparTableCli, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setText("Busca por produto:");
+        jLabel2.setText("Busca por pizza:");
 
-        comboProdutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboPizza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboPizza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboPizzaActionPerformed(evt);
+            }
+        });
+
+        btnBuscaProdutos.setText("Ok");
+        btnBuscaProdutos.setToolTipText("");
+        btnBuscaProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaProdutosActionPerformed(evt);
+            }
+        });
+
+        tablePizzas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pizza", "Cod_Pizza", "Quantidade"
+            }
+        ));
+        jScrollPane2.setViewportView(tablePizzas);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -158,11 +194,16 @@ public class TelaRelatorioGUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(comboProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(comboPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(btnBuscaProdutos))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel2)))
-                .addContainerGap(321, Short.MAX_VALUE))
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(251, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +211,11 @@ public class TelaRelatorioGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(comboProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscaProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -227,6 +272,33 @@ public class TelaRelatorioGUI extends javax.swing.JFrame {
         model.setNumRows(0);
     }//GEN-LAST:event_btnLimparTableCliActionPerformed
 
+    private void btnBuscaProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaProdutosActionPerformed
+     DefaultTableModel model = (DefaultTableModel) tablePizzas.getModel();
+        String nomePizza = comboPizza.getSelectedItem().toString();
+        ConsultasDAO consulta = new ConsultasDAO();
+        List<Pizza> pizzas = null;
+        try {
+            pizzas = consulta.getPizzas();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro sql");
+        }
+        int iguais = 0;
+        for (Pizza pizzaAtual : pizzas) {
+            if(nomePizza.toLowerCase().equals(pizzaAtual.getNomePizza().toLowerCase()))   {
+                model.addRow(new Object[]{pizzaAtual.getNomePizza().toLowerCase(), pizzaAtual.getCodPizza().toString(), pizzaAtual.getQuantidadePizza().toString()});
+                iguais++;
+            }
+        }
+
+        if (iguais == 0) {
+            JOptionPane.showMessageDialog(null, "Pizza não encontrado");
+        }   
+    }//GEN-LAST:event_btnBuscaProdutosActionPerformed
+
+    private void comboPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPizzaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboPizzaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -254,6 +326,8 @@ public class TelaRelatorioGUI extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -269,14 +343,17 @@ public class TelaRelatorioGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscaClientes;
+    private javax.swing.JButton btnBuscaProdutos;
     private javax.swing.JButton btnLimparTableCli;
     private javax.swing.JComboBox<String> comboClientes;
-    private javax.swing.JComboBox<String> comboProdutos;
+    private javax.swing.JComboBox<String> comboPizza;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableClientes;
+    private javax.swing.JTable tablePizzas;
     // End of variables declaration//GEN-END:variables
 }

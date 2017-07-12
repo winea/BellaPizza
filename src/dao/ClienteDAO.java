@@ -42,6 +42,28 @@ public class ClienteDAO {
      *
      * @param cliente
      */
+    
+    
+    
+    public void edita(Cliente cliente){
+        String sql = ("Update clinte set Nome=?,Telefone=?,Rua=?,Bairro=?,Numero=?complemento=? where ");
+        
+        try{
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            rs.first();
+            cliente.setNome(rs.getString("Nome"));
+            cliente.setTelefone(rs.getInt("Telefone"));
+            cliente.setRua(rs.getString("Rua"));
+            cliente.setBairro(rs.getString("Bairro"));
+            cliente.setNumero(rs.getInt("Numero"));
+            cliente.setComplemento(rs.getString("Complemento"));  
+        }
+        catch(SQLException ex){
+          JOptionPane.showMessageDialog(null,"Erro ao alterar os dados"+ex);  
+        }
+        
+    }
     public void remove(Cliente cliente,int telefone){
         
             String sql = ("DELETE FROM cliente WHERE Telefone=" +"'"+ telefone+"'");

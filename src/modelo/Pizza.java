@@ -11,35 +11,43 @@ package modelo;
  */
 public class Pizza {
 
-    /**
-     * @return the codigo
-     */
-    public int getCodigo() {
-        return codigo;
+    private Integer codPizza=0;
+    private String nomePizza;
+    private Integer quantidadePizza=0;
+    private float precoVendaPizza;
+
+    public Integer getCodPizza() {
+        return codPizza;
     }
 
-    /**
-     * @param codigo the codigo to set
-     */
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodPizza(Integer codPizza) {
+        this.codPizza = codPizza;
     }
 
-    /**
-     * @return the nome
-     */
-    public String getNome() {
-        return nome;
+    public String getNomePizza() {
+        return nomePizza;
     }
 
-    /**
-     * @param nome the nome to set
-     */
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomePizza(String nomePizza) {
+        this.nomePizza = nomePizza;
     }
-    private int codigo;
-    private String nome;
-  
+
+    public Integer getQuantidadePizza() {
+        return quantidadePizza;
+    }
+
+    public void setQuantidadePizza(Integer quantidadePizza) {
+        this.quantidadePizza = quantidadePizza;
+    }
+
+    public float getPrecoVendaPizza() {
+        return precoVendaPizza;
+    }
+
+    public void setPrecoVendaPizza(float precoVendaPizza) {
+        this.precoVendaPizza = precoVendaPizza;
+    }
     
+    
+
 }

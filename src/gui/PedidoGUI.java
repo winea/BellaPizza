@@ -69,7 +69,8 @@ public class PedidoGUI extends javax.swing.JFrame {
         qtdbebida = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        Finalizar = new javax.swing.JButton();
+        btneditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -77,6 +78,8 @@ public class PedidoGUI extends javax.swing.JFrame {
         jLabel1.setText("Valor total:");
 
         jLabel2.setText("Nome:");
+
+        jtfnome.setEnabled(false);
 
         jLabel3.setText("Telefone:");
 
@@ -95,13 +98,20 @@ public class PedidoGUI extends javax.swing.JFrame {
 
         jLabel4.setText("Endereço:");
 
+        jtfendereco.setEnabled(false);
+
+        jtfnumero.setEnabled(false);
+
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Pedidos - Bella Pizza");
 
         jLabel7.setText("Complemento:");
 
+        jtfcomplemento.setEnabled(false);
+
         jLabel8.setText("Bairro:");
 
+        jtfbairro.setEnabled(false);
         jtfbairro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfbairroActionPerformed(evt);
@@ -133,7 +143,19 @@ public class PedidoGUI extends javax.swing.JFrame {
 
         jLabel14.setText("Numero:");
 
-        jButton3.setText("Finalizar Pedido");
+        Finalizar.setText("Finalizar Pedido");
+        Finalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FinalizarActionPerformed(evt);
+            }
+        });
+
+        btneditar.setText("Editar");
+        btneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,7 +169,7 @@ public class PedidoGUI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 467, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Finalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(36, 36, 36)
@@ -206,20 +228,27 @@ public class PedidoGUI extends javax.swing.JFrame {
                                 .addComponent(jtfnumero))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jComboBoxmotoboy, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btneditar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jComboBoxmotoboy, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(1, 1, 1)))))
                 .addGap(70, 70, 70))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(194, 194, 194))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btneditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jtfnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,7 +287,7 @@ public class PedidoGUI extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfvalor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Finalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29))
         );
 
@@ -308,6 +337,24 @@ public class PedidoGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jbnpesquisarActionPerformed
 
+    private void FinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarActionPerformed
+        // TODO add your handling code here:
+        TelaPrincipal principal = new TelaPrincipal();
+        principal.setVisible(true);
+    }//GEN-LAST:event_FinalizarActionPerformed
+
+    private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
+        // TODO add your handling code here:
+        Cliente cliente = new Cliente();
+        cliente.setNome(jtfnome.getText());
+        cliente.setTelefone(Integer.parseInt(jtftelefone.getText()));
+        cliente.setRua(jtfendereco.getText());
+        cliente.setBairro(jtfbairro.getText());
+        String numero = jtfnumero.getText();
+        Integer numerocasa = Integer.parseInt(numero);
+        cliente.setComplemento(jtfcomplemento.getText());
+    }//GEN-LAST:event_btneditarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -344,8 +391,9 @@ public class PedidoGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Finalizar;
+    private javax.swing.JButton btneditar;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBoxbebida;
     private javax.swing.JComboBox<String> jComboBoxmotoboy;
     private javax.swing.JComboBox<String> jComboBoxpizza;

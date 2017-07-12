@@ -5,6 +5,13 @@
  */
 package gui;
 
+import dao.ConsultasDAO;
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import modelo.Cliente;
+
 /**
  *
  * @author Laryssa
@@ -29,7 +36,7 @@ public class TelaFluxodeCaixa extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtableFluxo = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jDataFinal = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -48,7 +55,7 @@ public class TelaFluxodeCaixa extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(20, 20, 60, 60);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtableFluxo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -64,7 +71,7 @@ public class TelaFluxodeCaixa extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jtableFluxo);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(10, 140, 860, 290);
@@ -130,7 +137,28 @@ public class TelaFluxodeCaixa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarDatasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarDatasActionPerformed
-        // TODO add your handling code here:
+      /*DefaultTableModel model = (DefaultTableModel) jtableFluxo.getModel();
+        String dataInicial = jDataInicial.getText();
+        String dataFinal = jDataFinal.getText();
+        ConsultasDAO consulta = new ConsultasDAO();
+        List<Cliente> clientes = null;
+        try {
+            clientes = consulta.getClientes();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro sql");
+        }
+        int iguais = 0;
+        for (Cliente nomeClienteAtual : clientes) {
+            if(nomeCliente.toLowerCase().equals(nomeClienteAtual.getNome().toString().toLowerCase()))   {
+                model.addRow(new Object[]{nomeClienteAtual.getNome().toLowerCase(), nomeClienteAtual.getTelefone(), ("Rua: "+nomeClienteAtual.getRua() + " "+ nomeClienteAtual.getNumero() + " Bairro: " +
+                        nomeClienteAtual.getBairro()), nomeClienteAtual.getComplemento()});
+                iguais++;
+            }
+        }
+
+        if (iguais == 0) {
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado");
+        }*/
     }//GEN-LAST:event_btnBuscarDatasActionPerformed
 
     /**
@@ -160,6 +188,8 @@ public class TelaFluxodeCaixa extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -180,7 +210,7 @@ public class TelaFluxodeCaixa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jtableFluxo;
     private javax.swing.JLabel txtValorTotal;
     // End of variables declaration//GEN-END:variables
 }

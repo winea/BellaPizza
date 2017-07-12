@@ -7,39 +7,21 @@ package gui;
 
 import dao.EstoqueDAO;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 import modelo.EstoqueModelo;
 
 /**
  *
- * @author Winy
+ * @author escol
  */
 public class EstoqueGUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form Estoque
+     * Creates new form EstoqueGUI
      */
     public EstoqueGUI() {
         initComponents();
-        //DefaultTableModel modelo = (defaultTableModel).jTableEstoque.getModel();
-        //jTableEstoque.setRowSorter(new TableRowSorter(modelo));
     }
 
-   /* public void readJTable(){
-        ArrayList dados = new ArrayList();
-        EstoqueDAO dao = new EstoqueDAO();
-        
-        for (EstoqueModelo e: dao.read()){
-            model.addRow(new Object)
-            
-                    
-       }            /*
-        ConsultasDAO consulta = new ConsultasDAO();
-        List<Cliente> clientes = consulta.getClientes();
-        for (Cliente nomeClienteAtual : clientes) {
-            comboClientes.addItem(nomeClienteAtual.getNome());*/
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,62 +30,58 @@ public class EstoqueGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("bellapizzabd?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
-        ingredienteQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT i FROM Ingrediente i");
-        ingredienteList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : ingredienteQuery.getResultList();
-        jLabel2Estoque = new javax.swing.JLabel();
-        jLabelCodigo = new javax.swing.JLabel();
-        jLabelNome = new javax.swing.JLabel();
         jTextFieldCodigo = new javax.swing.JTextField();
-        jTextFieldNome = new javax.swing.JTextField();
+        jLabelNome = new javax.swing.JLabel();
+        jLabelCodigo = new javax.swing.JLabel();
         jLabelValor = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldNome = new javax.swing.JTextField();
         jTextFieldValor = new javax.swing.JTextField();
-        jLabelQuantidade = new javax.swing.JLabel();
         jTextFieldQuantidade = new javax.swing.JTextField();
-        jTextFieldPesquisar = new javax.swing.JTextField();
-        jButtonPesquisar = new javax.swing.JButton();
-        jButtonCancelar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
-        jButtonAlterar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
         jButtonNovo = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTableEstoque = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabelFundo = new javax.swing.JLabel();
+        jTextFieldPesquisar = new javax.swing.JTextField();
+        jButtonPesquisar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel2Estoque.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2Estoque.setText("Controle Estoque");
-        getContentPane().add(jLabel2Estoque);
-        jLabel2Estoque.setBounds(270, 10, 210, 40);
-
-        jLabelCodigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelCodigo.setText("Codigo:");
-        getContentPane().add(jLabelCodigo);
-        jLabelCodigo.setBounds(70, 80, 60, 20);
-
-        jLabelNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelNome.setText("Nome:");
-        getContentPane().add(jLabelNome);
-        jLabelNome.setBounds(250, 80, 50, 17);
-
         jTextFieldCodigo.setEnabled(false);
+        jTextFieldCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCodigoActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextFieldCodigo);
-        jTextFieldCodigo.setBounds(70, 110, 160, 30);
+        jTextFieldCodigo.setBounds(50, 110, 170, 30);
+
+        jLabelNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelNome.setText("Nome");
+        getContentPane().add(jLabelNome);
+        jLabelNome.setBounds(250, 70, 60, 20);
+
+        jLabelCodigo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCodigo.setText("Código");
+        getContentPane().add(jLabelCodigo);
+        jLabelCodigo.setBounds(60, 70, 60, 20);
+
+        jLabelValor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelValor.setText("Valor:");
+        getContentPane().add(jLabelValor);
+        jLabelValor.setBounds(580, 70, 90, 20);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setText("Quantidade (g)");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(50, 170, 120, 30);
 
         jTextFieldNome.setEnabled(false);
         getContentPane().add(jTextFieldNome);
         jTextFieldNome.setBounds(250, 110, 300, 30);
-
-        jLabelValor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelValor.setText("Valor:");
-        getContentPane().add(jLabelValor);
-        jLabelValor.setBounds(570, 80, 70, 14);
 
         jTextFieldValor.setEnabled(false);
         jTextFieldValor.addActionListener(new java.awt.event.ActionListener() {
@@ -112,42 +90,14 @@ public class EstoqueGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldValor);
-        jTextFieldValor.setBounds(570, 110, 140, 30);
-
-        jLabelQuantidade.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelQuantidade.setText("Quantidade (g):");
-        getContentPane().add(jLabelQuantidade);
-        jLabelQuantidade.setBounds(70, 150, 100, 17);
+        jTextFieldValor.setBounds(580, 110, 170, 30);
 
         jTextFieldQuantidade.setEnabled(false);
         getContentPane().add(jTextFieldQuantidade);
-        jTextFieldQuantidade.setBounds(70, 180, 160, 30);
-
-        jTextFieldPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPesquisarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldPesquisar);
-        jTextFieldPesquisar.setBounds(70, 230, 470, 30);
-
-        jButtonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar.png"))); // NOI18N
-        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPesquisarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonPesquisar);
-        jButtonPesquisar.setBounds(590, 230, 40, 30);
-
-        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancel.png"))); // NOI18N
-        jButtonCancelar.setToolTipText("Cancelar");
-        jButtonCancelar.setEnabled(false);
-        getContentPane().add(jButtonCancelar);
-        jButtonCancelar.setBounds(110, 460, 40, 30);
+        jTextFieldQuantidade.setBounds(50, 210, 170, 30);
 
         jButtonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair_1.png"))); // NOI18N
-        jButtonExcluir.setToolTipText("Excluir");
+        jButtonExcluir.setText("Excluir");
         jButtonExcluir.setEnabled(false);
         jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,26 +105,31 @@ public class EstoqueGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonExcluir);
-        jButtonExcluir.setBounds(230, 460, 30, 30);
+        jButtonExcluir.setBounds(80, 420, 100, 40);
 
-        jButtonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alterar.png"))); // NOI18N
-        jButtonAlterar.setToolTipText("Alterar");
-        jButtonAlterar.setEnabled(false);
-        getContentPane().add(jButtonAlterar);
-        jButtonAlterar.setBounds(340, 460, 30, 30);
+        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cancel.png"))); // NOI18N
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.setEnabled(false);
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelar);
+        jButtonCancelar.setBounds(240, 420, 120, 40);
 
         jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/novo.png"))); // NOI18N
-        jButtonNovo.setToolTipText("Novo");
+        jButtonNovo.setText("Novo");
         jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNovoActionPerformed(evt);
             }
         });
         getContentPane().add(jButtonNovo);
-        jButtonNovo.setBounds(450, 460, 30, 30);
+        jButtonNovo.setBounds(430, 420, 100, 40);
 
         jButtonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/salvar.png"))); // NOI18N
-        jButtonSalvar.setToolTipText("Salvar");
+        jButtonSalvar.setText("Salvar");
         jButtonSalvar.setEnabled(false);
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,53 +137,59 @@ public class EstoqueGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonSalvar);
-        jButtonSalvar.setBounds(570, 460, 30, 30);
+        jButtonSalvar.setBounds(600, 420, 110, 40);
+        getContentPane().add(jTextFieldPesquisar);
+        jTextFieldPesquisar.setBounds(50, 280, 500, 30);
 
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, ingredienteList, jTableEstoque);
-        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codigoIngrediente}"));
-        columnBinding.setColumnName("Codigo Ingrediente");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nome}"));
-        columnBinding.setColumnName("Nome");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${quantidade}"));
-        columnBinding.setColumnName("Quantidade");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${precoUnitario}"));
-        columnBinding.setColumnName("Preco Unitario");
-        columnBinding.setColumnClass(java.math.BigDecimal.class);
-        bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
-        jScrollPane1.setViewportView(jTableEstoque);
-        if (jTableEstoque.getColumnModel().getColumnCount() > 0) {
-            jTableEstoque.getColumnModel().getColumn(3).setResizable(false);
-        }
+        jButtonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar.png"))); // NOI18N
+        jButtonPesquisar.setText("Pesquisar");
+        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonPesquisar);
+        jButtonPesquisar.setBounds(570, 270, 130, 40);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(70, 290, 600, 140);
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 290, 640, 130);
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setText("Estoque");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(340, 10, 80, 50);
 
-        jLabelFundo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(jLabelFundo);
-        jLabelFundo.setBounds(30, 60, 710, 450);
-
-        bindingGroup.bind();
-
-        setSize(new java.awt.Dimension(801, 577));
+        setSize(new java.awt.Dimension(824, 556));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCodigoActionPerformed
 
     private void jTextFieldValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldValorActionPerformed
 
-    private void jTextFieldPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesquisarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPesquisarActionPerformed
+    private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
+        String nome = jTextFieldPesquisar.getText();
+         
+         if ((jTextFieldPesquisar.getText().isEmpty())){
+            JOptionPane.showMessageDialog(null, "Preencha o nome para buscar");
+        }else{ 
+                EstoqueModelo model = new EstoqueModelo();
+                EstoqueDAO d = new EstoqueDAO();
+                d.buscar(model, nome);
+                
+                jTextFieldNome.setText(model.getNome());
+                jTextFieldCodigo.setText(String.valueOf(model.getCodigo()));
+                jTextFieldQuantidade.setText(String.valueOf(model.getQuant()));
+                jTextFieldValor.setText(String.valueOf(model.getPreco())); 
+               }
+       
+        jButtonExcluir.setEnabled(true);
+        jButtonCancelar.setEnabled(true);
+    }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        EstoqueModelo model = new EstoqueModelo();
+       EstoqueModelo model = new EstoqueModelo();
         model.setNome(jTextFieldNome.getText());
         model.setPreco(Integer.parseInt(jTextFieldValor.getText()));
         model.setQuant(Integer.parseInt(jTextFieldQuantidade.getText()));
@@ -244,11 +205,17 @@ public class EstoqueGUI extends javax.swing.JFrame {
         jTextFieldCodigo.setText("");
         jTextFieldQuantidade.setText("");
         jTextFieldValor.setText("");       
-        
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+        jTextFieldNome.setEnabled(true);
+        jTextFieldQuantidade.setEnabled(true);
+        jTextFieldValor.setEnabled(true);
+        jButtonSalvar.setEnabled(true);
+    }//GEN-LAST:event_jButtonNovoActionPerformed
+
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-        String nome = jTextFieldPesquisar.getText();
+         String nome = jTextFieldPesquisar.getText();
         
         if ((jTextFieldPesquisar.getText().isEmpty())){
             JOptionPane.showMessageDialog(null, "Preencha o nome para ser excluido");
@@ -261,39 +228,15 @@ public class EstoqueGUI extends javax.swing.JFrame {
                }
         
       jTextFieldPesquisar.setText("");
-                        
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
-    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
-        jTextFieldNome.setEnabled(true);
-        jTextFieldQuantidade.setEnabled(true);
-        jTextFieldValor.setEnabled(true);
-        jButtonSalvar.setEnabled(true);
-    }//GEN-LAST:event_jButtonNovoActionPerformed
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+       jTextFieldNome.setText("");
+        jTextFieldCodigo.setText("");
+        jTextFieldQuantidade.setText("");
+        jTextFieldValor.setText("");     
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
-    private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
-         
-         String nome = jTextFieldPesquisar.getText();
-         
-         if ((jTextFieldPesquisar.getText().isEmpty())){
-            JOptionPane.showMessageDialog(null, "Preencha o nome para buscar");
-        }else{ 
-                EstoqueModelo model = new EstoqueModelo();
-                EstoqueDAO d = new EstoqueDAO();
-                d.buscar(model, nome);
-                
-                jTextFieldNome.setText(model.getNome());
-                jTextFieldCodigo.setText(String.valueOf(model.getCodigo()));
-                jTextFieldQuantidade.setText(String.valueOf(model.getQuant()));
-                jTextFieldValor.setText(String.valueOf(model.getPreco())); 
-               }
-        jButtonAlterar.setEnabled(true);
-        jButtonExcluir.setEnabled(true);
-       
-        
-    }//GEN-LAST:event_jButtonPesquisarActionPerformed
-
-  
     /**
      * @param args the command line arguments
      */
@@ -320,7 +263,6 @@ public class EstoqueGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(EstoqueGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -331,29 +273,20 @@ public class EstoqueGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.persistence.EntityManager entityManager;
-    private java.util.List<gui.Ingrediente> ingredienteList;
-    private javax.persistence.Query ingredienteQuery;
-    private javax.swing.JButton jButtonAlterar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JButton jButtonSalvar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2Estoque;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelCodigo;
-    private javax.swing.JLabel jLabelFundo;
     private javax.swing.JLabel jLabelNome;
-    private javax.swing.JLabel jLabelQuantidade;
     private javax.swing.JLabel jLabelValor;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableEstoque;
     private javax.swing.JTextField jTextFieldCodigo;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldPesquisar;
     private javax.swing.JTextField jTextFieldQuantidade;
     private javax.swing.JTextField jTextFieldValor;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
