@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+/*package gui;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -16,7 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+/import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -24,7 +24,7 @@ import javax.persistence.Transient;
  *
  * @author Winy
  */
-@Entity
+/*@Entity
 @Table(name = "ingrediente", catalog = "bellapizzabd", schema = "")
 @NamedQueries({
     @NamedQuery(name = "Ingrediente.findAll", query = "SELECT i FROM Ingrediente i")
@@ -131,4 +131,4 @@ public class Ingrediente implements Serializable {
         changeSupport.removePropertyChangeListener(listener);
     }
     
-}
+}*/
